@@ -1,3 +1,3 @@
 import sys
 
-sys.path.append('dastro_bot/_default_settings')
+sys.path.append('base_astro_bot/_default_settings')

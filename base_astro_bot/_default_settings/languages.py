@@ -29,7 +29,6 @@ Commands = namedtuple('Commands', [
     'releases',
     'roadmap',
     'trade',
-
 ])
 
 messages_pl = Messages(

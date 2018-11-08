@@ -7,7 +7,7 @@ import sys
 DEFAULT_FILES_DIR = "_default_settings"
 
 
-def deploy_default_files(destination_dir="discord_bot"):
+def deploy_default_files(destination_dir="astro_bot"):
     module_dir = os.path.dirname(os.path.realpath(__file__))
     default_files_dir = os.path.join(module_dir, DEFAULT_FILES_DIR)
     for item in os.listdir(default_files_dir):
@@ -16,7 +16,7 @@ def deploy_default_files(destination_dir="discord_bot"):
             copyfile(source_file, os.path.join(destination_dir, item))
 
 
-def start_project(name="discord_bot"):
+def start_project(name="astro_bot"):
     destination_dir = os.path.join(os.getcwd(), name)
     os.mkdir(destination_dir)
     deploy_default_files(destination_dir)

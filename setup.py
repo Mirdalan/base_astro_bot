@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 with open("requirements.txt") as f:
@@ -8,12 +8,12 @@ with open("README.md") as f:
 
 
 setup(
-    name='dastro_bot',
-    version='1.0.8.a4',
-    description='Discord bot for Star Citizen players',
+    name='base_astro_bot',
+    version='1.0.1.a1',
+    description='Base bot class for Star Citizen players',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/Mirdalan/discord_astro_bot',
+    url='https://github.com/Mirdalan/base_astro_bot',
     author='Michal Chrzanowski',
     author_email='michrzan@gmail.com',
     license='MIT',
@@ -28,7 +28,7 @@ setup(
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
     ],
-    keywords='star citizen discord bot',
+    keywords='star citizen discord spectrum bot',
     install_requires=requirements,
     extras_require={
         ':sys_platform == "win32"': [
@@ -38,8 +38,7 @@ setup(
             'websocket-client==0.44.0'
         ]
     },
-    packages=['dastro_bot', 'dastro_bot._default_settings'],
-    package_data={'': ['discord_bot.json', 'discord_bot.service']},
+    packages=find_packages(exclude=('tests',)),
     include_package_data=True,
     python_requires='~=3.5',
 )

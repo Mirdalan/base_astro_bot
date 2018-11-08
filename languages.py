@@ -1,1 +1,1 @@
-./dastro_bot/_default_settings/languages.py
+./base_astro_bot/_default_settings/languages.py

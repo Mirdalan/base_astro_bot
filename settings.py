@@ -1,1 +1,1 @@
-./dastro_bot/_default_settings/settings.py
+./base_astro_bot/_default_settings/settings.py

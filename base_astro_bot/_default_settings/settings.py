@@ -1,8 +1,8 @@
 import languages
 
 # Loggers
-LOG_FILE = "dastro_bot.log"
-LOGGER_NAME = "Star Citizen Discord Astro-Bot logger"
+LOG_FILE = "astro_bot.log"
+LOGGER_NAME = "Star Citizen Astro-Bot logger"
 
 # language
 messages = languages.messages_en

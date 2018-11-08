@@ -1,8 +1,8 @@
-# Discord Astro Bot
+# Base Astro Bot
 
-#### Discord Bot for Star Citizen players
+#### Base Bot for Star Citizen players
 
-This project contains python bot project for Discord, useful for Star Citizen players.
+This project contains python base bot class, useful when creating a bot on specific platform.
 
 ### Available features:
  1. Organization fleet information. Each member can add/remove ships that he owns. 
@@ -22,7 +22,6 @@ This project contains python bot project for Discord, useful for Star Citizen pl
 * Python 3.5+
 * aiohttp 3.4.4
 * async-timeout 3.0.1
-* disco-py 0.0.12
 * google-api-python-client 1.7.4
 * google-auth 1.5.1
 * google-auth-httplib2 0.0.3
@@ -33,26 +32,19 @@ This project contains python bot project for Discord, useful for Star Citizen pl
 ### Installation
 
 ```bash
-pip install dastro_bot
+pip install base_astro_bot
 python -m dastro_bot.install DIRECTORY_NAME
 ```
 The second command generates default configuration files to run your own BOT:
-* discord_bot.json - disco-py bot configuration file
-* discord_bot.py - basic bot class
-* discord_bot.service - systemd unit file
 * languages.py - named tuples with translation 
 * settings.py - custom settings for your server
 
 ### Basic Configuration
 Here's what you absolutely need to configure to run the bot:
-* discord_bot.json 
-  * set the `token` value to your generated discord token
 * settings.py 
-  * set the CHANNELS dict values to channels IDs from your server
+  * set the CHANNELS dict values
   * actually in basic config only the `main` channel is required
   * you can set all three channels with the same value
-* discord_bot.service
-  * if you want to setup a systemd service
 
 #### Google Spreadsheet
 Google spreadsheeet API is used to read trade data created by community.

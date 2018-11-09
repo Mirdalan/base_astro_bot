@@ -140,7 +140,7 @@ class RsiDataParser:
         return self.try_to_request_get(self.game_packages_url).text
 
     def get_updated_versions(self):
-        self.road_map.update_road_map()
+        self.road_map.update_database()
         return self.road_map.current_versions
 
     def _iterate_new_forum_threads(self, hits):

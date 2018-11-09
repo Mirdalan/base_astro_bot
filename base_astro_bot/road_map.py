@@ -20,7 +20,7 @@ class RoadMap:
         self.releases = []
         self.categories = {}
         self.current_versions = {}
-        self.update_road_map()
+        self.update_database()
 
     @staticmethod
     def split_long_string_to_lines(input_text, base_length=20):
@@ -49,13 +49,14 @@ class RoadMap:
         except requests.exceptions.ConnectionError as err:
             self.logger.warning("Could not download Road-map from RSI website due to following error:\n%s" % str(err))
 
-    def update_road_map(self):
+    def update_database(self):
         response = self.get_road_map_response()
         if response:
             self.releases = response['data'].get('releases')
             self.categories = self._get_categories_structure(response['data'].get('categories'))
             self.current_versions = self._get_current_versions(response['data'].get('description'))
             self.database.save_road_map(self.releases, self.categories, self.current_versions)
+            return True
         else:
             self.releases, self.categories, self.current_versions = self.database.get_road_map()
 
@@ -92,11 +93,11 @@ class RoadMap:
     @staticmethod
     def _get_task_status(card):
         if card['completed'] == 0:
-            icon = ""
+            icon = "✘"
         elif card['completed'] == card['tasks']:
-            icon = ""
+            icon = "✔"
         else:
-            icon = ""
+            icon = "⚙"
         return "%s %s/%s" % (icon, card['completed'], card['tasks'])
 
     def get_release_details(self, name):

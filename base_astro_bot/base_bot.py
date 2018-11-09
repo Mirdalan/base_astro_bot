@@ -294,7 +294,7 @@ class BaseBot:
 
     @staticmethod
     def get_road_map_table(value, key):
-        return "```\n%s\n```" % tabulate(value, tablefmt="presto", headers=(key, "Task"))
+        return "```\n%s\n```" % tabulate(value, tablefmt="presto", headers=(key, "Task", "Done"))
 
     def get_road_map_data(self, data, find=None):
         result = []

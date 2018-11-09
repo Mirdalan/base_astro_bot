@@ -90,7 +90,7 @@ class RoadMap:
             for release in self.releases]
 
     @staticmethod
-    def get_task_status(card):
+    def _get_task_status(card):
         if card['completed'] == 0:
             icon = ""
         elif card['completed'] == card['tasks']:
@@ -111,7 +111,7 @@ class RoadMap:
                 category_name = self._get_category_name(card['category_id'])
                 value = [self.split_long_string_to_lines(card['name']),
                          self.split_long_string_to_lines(card['description'], 40),
-                         self.get_task_status(card)]
+                         self._get_task_status(card)]
                 result.setdefault(category_name, []).append(value)
             return result
 
@@ -124,8 +124,9 @@ class RoadMap:
                     if int(category['id']) == int(card['category_id']):
                         release_header = release.get('name') + " " + release.get('description')
                         value = [self.split_long_string_to_lines(card['name']),
-                                 self.split_long_string_to_lines(card['description'], 40)]
-                        result.setdefault(release_header, [value]).append(value)
+                                 self.split_long_string_to_lines(card['description'], 40),
+                                 self._get_task_status(card)]
+                        result.setdefault(release_header, []).append(value)
             return result
 
     def get_release_category_details(self, release_name, category_slug):

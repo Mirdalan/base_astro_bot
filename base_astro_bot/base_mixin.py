@@ -8,6 +8,10 @@ class BaseMixinClass:
     max_ships = None
     ship_data_headers = None
 
+    @staticmethod
+    def mention_user(user):
+        raise NotImplementedError
+
     def get_author_if_given(self, author):
         raise NotImplementedError
 

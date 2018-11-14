@@ -5,15 +5,15 @@ import time
 from tabulate import tabulate
 import pafy
 
-from .attachments_downloader import DiscordAttachmentHandler
-from .database_manager import DatabaseManager
-from .my_logger import MyLogger
-from .rsi_parser import RsiDataParser
-from .trade_assistant import TradeAssistant
+from .utils.attachments_downloader import DiscordAttachmentHandler
+from .database import DatabaseManager
+from .utils.my_logger import MyLogger
+from .rsi_data import RsiDataParser, RsiMixin
+from .trade import TradeAssistant, TradeMixin
 import settings
 
 
-class BaseBot:
+class BaseBot(RsiMixin, TradeMixin):
     main_channel_id = settings.CHANNELS['main']
     messages = settings.messages
     max_characters = settings.MESSAGE_MAX_CHARACTERS
@@ -57,6 +57,12 @@ class BaseBot:
     def mention_channel(channel):
         raise NotImplementedError
 
+    def get_author_if_given(self, author):
+        if author:
+            return self.mention_user(author)
+        else:
+            return ""
+
     @staticmethod
     def print_dict_table(items, table_format="presto"):
         return "```%s```" % tabulate(items, headers='keys', tablefmt=table_format)
@@ -74,16 +80,6 @@ class BaseBot:
             messages = self.split_data_and_get_messages(items[:half_length], get_message_function, *args, **kwargs)
             messages += self.split_data_and_get_messages(items[half_length:], get_message_function, *args, **kwargs)
         return messages
-
-    def get_ship_data_from_name(self, ship_name):
-        ship_data = self.rsi_data.get_ship(ship_name)
-        if ship_data is None:
-            found_ships = self.rsi_data.get_ships_by_query(ship_name)
-            if len(found_ships) == 1:
-                ship_data = found_ships[0]
-            else:
-                ship_data = found_ships
-        return ship_data
 
     def update_fleet(self, attachments, author):
         invalid_ships = None
@@ -173,71 +169,6 @@ class BaseBot:
         else:
             yield self.messages.member_not_found
 
-    @staticmethod
-    def get_ship_price_message(ship):
-        return "*%s*  **%s**, price:  %s (+ VAT)" % (ship["manufacturer_code"], ship["name"], ship["price"])
-
-    def get_ship_prices_lines(self, found_ships):
-        prices_lines = []
-        for ship in found_ships:
-            try:
-                prices_lines.append(self.get_ship_price_message(ship))
-            except KeyError:
-                prices_lines.append(self.messages.ship_price_unknown % (ship["manufacturer_code"], ship["name"]))
-        return prices_lines
-
-    def iterate_ship_prices(self, query, author=None):
-        found_ships = self.rsi_data.get_ships_by_query(query)
-        if 0 < len(found_ships) < self.max_ships:
-            price_lines = self.get_ship_prices_lines(found_ships)
-            for message in self.split_data_and_get_messages(price_lines, lambda lines: "\n".join(lines)):
-                yield message
-        else:
-            yield self.messages.ship_not_exists % self.get_author_if_given(author)
-
-    def format_ship_data(self, ship):
-        table = [[key, ship.get(key, "unknown")] for key in self.ship_data_headers]
-        return "%s\n```%s```\n" % (self.rsi_data.base_url + ship['url'], tabulate(table))
-
-    def compare_ships_data(self, ships):
-        table = [[key] for key in self.ship_data_headers]
-        for ship in ships:
-            if ship:
-                for row in table:
-                    row.append(ship.get(row[0], "unknown"))
-        return "\n```%s```\n" % tabulate(table)
-
-    def split_compare_if_too_long(self, ships):
-        return self.split_data_and_get_messages(ships, self.compare_ships_data)
-
-    def get_author_if_given(self, author):
-        if author:
-            return self.mention_user(author)
-        else:
-            return ""
-
-    def iterate_ship_info(self, query, author=None):
-        found_ship = self.get_ship_data_from_name(query)
-        if isinstance(found_ship, list) and (1 < len(found_ship) < self.max_ships):
-            for message in self.split_compare_if_too_long(found_ship):
-                yield message
-        elif isinstance(found_ship, dict):
-            yield self.format_ship_data(found_ship)
-        else:
-            yield self.messages.ship_not_exists % self.get_author_if_given(author)
-
-    def iterate_ships_comparison(self, query, author=None):
-        names = query.split(",")
-        found_ships = []
-        for name in names:
-            for ship_data in self.rsi_data.get_ships_by_query(name.strip()):
-                found_ships.append(ship_data)
-        if isinstance(found_ships, list) and len(found_ships) < self.max_ships:
-            for message in self.split_compare_if_too_long(found_ships):
-                yield message
-        else:
-            yield self.messages.ship_not_exists % self.get_author_if_given(author)
-
     def report_ship_price(self):
         for ship_name, price_limit in self.report_ship_price_list:
             ship_data = self.rsi_data.get_ship(ship_name)
@@ -265,11 +196,6 @@ class BaseBot:
             for thread in new_threads:
                 self.channel_main.send_message(thread)
 
-    def update_releases(self):
-        current_releases = self.rsi_data.get_updated_versions()
-        self.database_manager.update_versions(current_releases)
-        return "PU Live: %s\nPTU: %s\n" % (current_releases.get('live'), current_releases.get('ptu'))
-
     def monitor_youtube_channel(self):
         latest_video_url = pafy.get_channel("RobertsSpaceInd").uploads[0].watchv_url
         if self.database_manager.rsi_video_is_new(latest_video_url):
@@ -282,80 +208,3 @@ class BaseBot:
             self.monitor_youtube_channel()
             self.report_ship_price()
             time.sleep(300)
-
-    def get_no_road_map_data_found_message(self):
-            self.logger.debug("No Roadmap data found...")
-            return self.messages.road_map_not_found % tabulate(self.rsi_data.road_map.get_releases_and_categories(),
-                                                               tablefmt="fancy_grid")
-
-    @staticmethod
-    def _data_found(data, find):
-        return (not find) or (find.lower() in data.lower())
-
-    @staticmethod
-    def _get_road_map_table(value, key):
-        return "```\n%s\n```" % tabulate(value, tablefmt="presto", headers=(key, "Task", "Done"))
-
-    def _get_road_map_data_message(self, data, find=None):
-        result = []
-        if data:
-            self.logger.debug("Showing Roadmap...")
-            if isinstance(data, str):
-                if self._data_found(data, find):
-                    result = [self.print_dict_table(data, table_format="fancy_grid")]
-            elif isinstance(data, dict):
-                for key, value in data.items():
-                    if self._data_found(key + str(value), find):
-                        result += self.split_data_and_get_messages(value, self._get_road_map_table, key)
-        if result:
-            return result
-        else:
-            return [self.get_no_road_map_data_found_message()]
-
-    def get_road_map_messages(self, args):
-        self.logger.debug("Requested Roadmap.")
-        if args.category and args.version:
-            result = self.rsi_data.road_map.get_release_category_details(args.version, args.category)
-            result = self._get_road_map_data_message(result)
-        elif args.version:
-            result = self.rsi_data.road_map.get_release_details(args.version)
-            result = self._get_road_map_data_message(result, find=args.find)
-        elif args.category:
-            result = self.rsi_data.road_map.get_category_details(args.category)
-            result = self._get_road_map_data_message(result, find=args.find)
-        elif args.list:
-            result = self.rsi_data.road_map.get_releases_and_categories()
-            result = [self.print_dict_table(result, table_format="fancy_grid")]
-        elif args.find:
-            result = self.rsi_data.road_map.get()
-            result = self._get_road_map_data_message(result, find=args.find)
-        elif args.update:
-            result = self.rsi_data.road_map.update_database()
-            result = [self.messages.success] if result else [self.messages.something_went_wrong]
-        else:
-            result = self.rsi_data.road_map.get_releases()
-            result = [self.print_dict_table(result, table_format="fancy_grid")]
-        return result
-
-    def get_trade_messages(self, args):
-        budget = 1000000000
-        cargo = 1000000000
-        exclude = set()
-        if args.budget:
-            budget = float(args.budget)
-            if budget < 1:
-                budget = 1
-        if args.cargo:
-            cargo = int(args.cargo)
-            if cargo < 1:
-                cargo = 1
-        if args.exclude:
-            exclude.add(args.exclude)
-        if args.legal:
-            exclude.add("Jumptown")
-
-        result = self.trade.get_trade_routes(cargo,
-                                             budget,
-                                             exclude=list(exclude),
-                                             start_locations=args.start_location)
-        return ["```%s```" % tabulate(list(route.items()), tablefmt="presto") for route in result]

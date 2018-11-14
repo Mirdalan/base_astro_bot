@@ -1,8 +1,8 @@
 import requests
 
 import settings
-from .my_logger import MyLogger
-from .database_manager import DatabaseManager
+from ..utils.my_logger import MyLogger
+from ..database import DatabaseManager
 
 
 class RoadMap:

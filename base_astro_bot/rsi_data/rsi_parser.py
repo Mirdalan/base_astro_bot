@@ -5,8 +5,8 @@ from time import sleep
 import requests
 
 import settings
-from .my_logger import MyLogger
-from .database_manager import DatabaseManager
+from ..utils.my_logger import MyLogger
+from ..database import DatabaseManager
 from .road_map import RoadMap
 
 

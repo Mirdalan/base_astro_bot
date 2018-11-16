@@ -35,9 +35,9 @@ API_INIT_URL = BASE_URL + "/roadmap/board/1-Star-Citizen"
 ROAD_MAP_URL = BASE_URL + "/api/roadmap/v1/boards/1"
 FORUM_SEARCH_URL = BASE_URL + "/api/spectrum/search/content/extended"
 FORUM_SEARCH_PAYLOAD = {
-    "community_id":"1",
-    "highlight_role_id":"2",
-    "type": ["","op"],
+    "community_id": "1",
+    "highlight_role_id": "2",
+    "type": ["", "op"],
     "text": "",
     "page": 1,
     "sort": "latest",
@@ -54,5 +54,35 @@ REPORT_SHIP_PRICE_LIST = [
 # Trade Assistant
 TRADE_GOOGLE_SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
 TRADE_SPREADSHEET_ID = '16vZzeCHnDIVRmKeqN4VHqy5Rm3nkkLrsig2odQTxuNo'
-TRADE_SPREADSHEET_CELLS_RANGE = 'B3:AF31'
-TRADE_SC_RELEASE = '3.2'
+TRADE_SPREADSHEET_CELLS_RANGE = 'B3:CD31'
+TRADE_SC_RELEASE = '3.3.5 in progess'
+TRADE_COMMODITIES = {
+        "Agricium",
+        "Agricultural",
+        "Supply",
+        "Aluminum",
+        "Altruciatoxine",
+        "Astatine",
+        "Beryl",
+        "Chlorine",
+        "Corundum",
+        "Diamond",
+        "Distilled",
+        "Spirits",
+        "Fluorine",
+        "Gold",
+        "Hydrogen",
+        "Iodine",
+        "Laranite",
+        "Medical",
+        "Supply",
+        "Processed",
+        "Food",
+        "Quartz",
+        "Scrap",
+        "Stims",
+        "Titanium",
+        "Tungsten",
+        "Waste",
+        "Widow",
+    }

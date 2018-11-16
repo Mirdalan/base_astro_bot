@@ -6,7 +6,7 @@ from sqlalchemy.orm import sessionmaker, exc
 
 import settings
 from . import database_models
-from ..utils.my_logger import MyLogger
+from ..utils import MyLogger
 
 
 class DatabaseManager:

@@ -30,3 +30,7 @@ class TradeMixin(BaseMixinClass, ABC):
                                              exclude=list(exclude),
                                              start_locations=args.start_location)
         return ["```%s```" % tabulate(list(route.items()), tablefmt="presto") for route in result]
+
+    def update_trade_data(self):
+        self.trade.update_database()
+        return self.messages.success

@@ -9,6 +9,7 @@ from ..database import DatabaseManager
 
 class PricesStructure:
     spreadsheet_id = settings.TRADE_SPREADSHEET_ID
+    commodities = settings.TRADE_COMMODITIES
 
     def __init__(
             self,
@@ -17,16 +18,21 @@ class PricesStructure:
             log_file="trade_assistant.log",
             database_manager=None
     ):
-        self.logger = MyLogger(log_file_name=log_file, logger_name="Trade Assistant logger", prefix="[TRADE]")
-        if database_manager:
-            self.database = database_manager
-        else:
-            self.database = DatabaseManager(log_file=log_file)
+        self._log_file = log_file
+        self.logger = MyLogger(log_file_name=self._log_file, logger_name="Trade Assistant logger", prefix="[TRADE]")
         self.release = release
         self.range_name = '%s!%s' % (release, cells_range)
+        self.database = self.get_given_or_new_database_manager(database_manager)
         self.locations = None
         self.prices = {}
+        self._value_type_row = None
         self._initiate_database()
+
+    def get_given_or_new_database_manager(self, database_manager):
+        if database_manager:
+            return database_manager
+        else:
+            return DatabaseManager(log_file=self._log_file)
 
     @staticmethod
     def _fill_missing_blank_cells(values):
@@ -70,9 +76,12 @@ class PricesStructure:
             for index, location in enumerate(locations) if location
         }
 
+    def _row_contains_price(self, index):
+        return 'Buy' in self._value_type_row[index] or 'Sell' in self._value_type_row[index]
+
     def _download_data_structure(self):
         values = self._get_spreadsheet_rows()
-        locations, celestial_bodies = None, None
+        locations, celestial_bodies, self._value_type_row = None, None, None
         if values:
             for row in values:
                 if 'CRUSADER' in row:
@@ -81,18 +90,15 @@ class PricesStructure:
                     if celestial_bodies:
                         self._build_locations(row, celestial_bodies)
                     locations = self._populate_merged_cells(row)
-                elif row[0] and locations and celestial_bodies:
+                elif 'Profit' in row:
+                    self._value_type_row = row
+                elif locations and celestial_bodies and self._value_type_row and row[0].strip() in self.commodities:
                     item_name = row[0]
                     item_prices = {}
                     for index, location in enumerate(locations):
-                        if index == 0:
-                            continue
-                        if row[index]:
+                        if row[index] and self._row_contains_price(index):
                             price = str(float(row[index].replace(",", ".")))
-                            if index % 2:
-                                transaction = 'Buy'
-                            else:
-                                transaction = 'Sell'
+                            transaction = self._value_type_row[index]
                             if item_prices.get(transaction):
                                 if item_prices[transaction].get(price):
                                     item_prices[transaction][price].append(location)
@@ -107,5 +113,8 @@ class PricesStructure:
         if stored_data:
             self.locations, self.prices = stored_data
         else:
+            self.update_database()
+
+    def update_database(self):
             self._download_data_structure()
             self.database.save_trade_data(self.locations, self.prices)

@@ -32,12 +32,16 @@ class TradeAssistant(PricesStructure):
 
         routes = []
         for item_name, prices in self.prices.items():
-            lowest_buy = min([float(price) for price in prices["Buy"].keys()])
-            lowest_buy_locations = prices["Buy"][str(lowest_buy)]   # type: list
-            if start_locations:
-                lowest_buy_locations = self._get_filtered_locations(start_locations, lowest_buy_locations)
-            highest_sell = max([float(price) for price in prices["Sell"].keys()])
-            highest_sell_locations = prices["Sell"][str(highest_sell)]
+            try:
+                lowest_buy = min([float(price) for price in prices["Buy"].keys()])
+                lowest_buy_locations = prices["Buy"][str(lowest_buy)]   # type: list
+                if start_locations:
+                    lowest_buy_locations = self._get_filtered_locations(start_locations, lowest_buy_locations)
+                highest_sell = max([float(price) for price in prices["Sell"].keys()])
+                highest_sell_locations = prices["Sell"][str(highest_sell)]
+            except KeyError:
+                self.logger.warning("Missing prices for '%s'." % item_name)
+                continue
 
             if exclude:
                 self._exclude_locations(lowest_buy_locations, highest_sell_locations, exclude)

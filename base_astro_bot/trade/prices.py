@@ -84,7 +84,7 @@ class PricesStructure:
         locations, celestial_bodies, self._value_type_row = None, None, None
         if values:
             for row in values:
-                if 'CRUSADER' in row:
+                if 'YELA' in row:
                     celestial_bodies = self._populate_merged_cells(row)
                 elif 'Port Olisar' in row:
                     if celestial_bodies:

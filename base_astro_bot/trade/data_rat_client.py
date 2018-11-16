@@ -1,16 +1,19 @@
 from datetime import date
+import settings
 
 import requests
 
 
 class DataClient:
     base_url = "https://scm.oceandatarat.org:8443/scm-server/api/v1/"
+    token = settings.SCM_TOKEN
+    headers = {'authorization': settings.SCM_TOKEN}
 
     def get_commodities(self):
-        return requests.get(self.base_url + 'commodities').json()
+        return requests.get(self.base_url + 'commodities', headers=self.headers).json()
 
     def get_locations(self):
-        return requests.get(self.base_url + 'locations').json()
+        return requests.get(self.base_url + 'locations', headers=self.headers).json()
 
     def get_prices(self):
         """
@@ -25,7 +28,7 @@ class DataClient:
                   }
                 ]
         """
-        return requests.get(self.base_url + 'commodity_prices').json()
+        return requests.get(self.base_url + 'commodity_prices', headers=self.headers).json()
 
     def update_price(self, commodity_id, price, location_id, transaction_type="buy"):
         payload = {
@@ -35,7 +38,7 @@ class DataClient:
                     "price_commodity": commodity_id,
                     "price_unit_price": price
                   }
-        return requests.patch(self.base_url + 'commodity_prices', json=payload).json()
+        return requests.patch(self.base_url + 'commodity_prices', json=payload, headers=self.headers).json()
 
     def add_transaction(self, commodity_id, price, units, location_id, transaction_type):
         payload = {
@@ -45,7 +48,7 @@ class DataClient:
                     "transaction_units": units,
                     "transaction_unit_price": price
                   }
-        return requests.post(self.base_url + 'commodity_transactions', json=payload).json()
+        return requests.post(self.base_url + 'commodity_transactions', json=payload, headers=self.headers).json()
 
 
 if __name__ == '__main__':

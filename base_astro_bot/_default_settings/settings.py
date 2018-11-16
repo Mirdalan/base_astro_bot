@@ -86,3 +86,4 @@ TRADE_COMMODITIES = {
         "Waste",
         "Widow",
     }
+SCM_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjViZWVlNThkOTBlNzA2NjY1MzFjOTljOSIsInNjb3BlIjpbXSwiaWF0IjoxNTQyMzgzMDE1fQ.AIffYvZzJLN_cr5-wbalM0TNA1Yh4Y4tn32_7NydU9A"

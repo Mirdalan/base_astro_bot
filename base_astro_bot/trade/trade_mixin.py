@@ -33,7 +33,4 @@ class TradeMixin(BaseMixinClass, ABC):
 
     def update_trade_data(self):
         self.trade.update_database()
-        with open("temp.json", 'w') as f:
-            import json
-            f.write(json.dumps(self.trade.prices))
         return self.messages.success

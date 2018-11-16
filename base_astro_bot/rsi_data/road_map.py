@@ -1,7 +1,7 @@
 import requests
 
 import settings
-from ..utils.my_logger import MyLogger
+from ..utils import MyLogger
 from ..database import DatabaseManager
 
 

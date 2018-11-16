@@ -4,9 +4,8 @@ import time
 from tabulate import tabulate
 import pafy
 
-from .utils.attachments_downloader import DiscordAttachmentHandler
+from .utils import DiscordAttachmentHandler, MyLogger
 from .database import DatabaseManager
-from .utils.my_logger import MyLogger
 from .rsi_data import RsiDataParser, RsiMixin
 from .trade import TradeAssistant, TradeMixin
 from .fleet import FleetMixin

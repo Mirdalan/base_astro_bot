@@ -1,7 +1,8 @@
 from .prices import PricesStructure
+from .google_docs_structure import GoogleDocsPrices
 
 
-class TradeAssistant(PricesStructure):
+class TradeAssistant(GoogleDocsPrices):
 
     @staticmethod
     def _get_filtered_locations(start_locations, lowest_buy_locations):
@@ -13,9 +14,14 @@ class TradeAssistant(PricesStructure):
 
     def _get_allowed_locations(self, query):
         query = query.lower()
-        return [location for location in self.locations.keys()
-                if query in location.lower()
-                or query in self.locations[location].lower()]
+        result = []
+        for location_id, location in self.locations.items():
+            if query in location['location_name'].lower():
+                result.append(location_id)
+            else:
+                if query in location['container_name'].lower():
+                    result.append(location_id)
+        return result
 
     @staticmethod
     def _exclude_locations(lowest_buy_locations, highest_sell_locations, exclude):
@@ -33,12 +39,12 @@ class TradeAssistant(PricesStructure):
         routes = []
         for item_name, prices in self.prices.items():
             try:
-                lowest_buy = min([float(price) for price in prices["Buy"].keys()])
-                lowest_buy_locations = prices["Buy"][str(lowest_buy)]   # type: list
+                lowest_buy = min([float(price) for price in prices["buy"].keys()])
+                lowest_buy_locations = prices["buy"][str(lowest_buy)]   # type: list
                 if start_locations:
                     lowest_buy_locations = self._get_filtered_locations(start_locations, lowest_buy_locations)
-                highest_sell = max([float(price) for price in prices["Sell"].keys()])
-                highest_sell_locations = prices["Sell"][str(highest_sell)]
+                highest_sell = max([float(price) for price in prices["sell"].keys()])
+                highest_sell_locations = prices["sell"][str(highest_sell)]
             except KeyError:
                 self.logger.warning("Missing prices for '%s'." % item_name)
                 continue

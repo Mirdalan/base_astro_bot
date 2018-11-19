@@ -22,13 +22,13 @@ class PricesStructure:
         self.logger = MyLogger(log_file_name=self._log_file, logger_name="Trade Assistant logger", prefix="[TRADE]")
         self.release = release
         self.range_name = '%s!%s' % (release, cells_range)
-        self.database = self.get_given_or_new_database_manager(database_manager)
+        self.database = self._get_existing_or_new_database_manager(database_manager)
         self.locations = None
         self.prices = {}
         self._value_type_row = None
         self._initiate_database()
 
-    def get_given_or_new_database_manager(self, database_manager):
+    def _get_existing_or_new_database_manager(self, database_manager):
         if database_manager:
             return database_manager
         else:
@@ -84,7 +84,7 @@ class PricesStructure:
         locations, celestial_bodies, self._value_type_row = None, None, None
         if values:
             for row in values:
-                if 'CRUSADER' in row:
+                if 'YELA' in row:
                     celestial_bodies = self._populate_merged_cells(row)
                 elif 'Port Olisar' in row:
                     if celestial_bodies:

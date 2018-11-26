@@ -7,10 +7,7 @@ from .data_rat_client import TradeClient
 class DataRatPrices:
     def __init__(self):
         self.client = TradeClient()
-
-    @property
-    def locations(self):
-        return self.client.get_locations()
+        self.locations = self.client.get_locations()
 
     @property
     def commodities(self):
@@ -62,12 +59,13 @@ class DataRatPrices:
                 idx = randint(0, len(arguments_list)-1)
                 commodity_id, price, location_id, transaction_type, message = arguments_list.pop(idx)
                 if self.get_price(commodity_id, location_id):
+                    print("Found %s. Skipping." % message)
                     continue
                 else:
+                    print("Didn't find %s. Updating...\n" % message)
                     self.client.update_price(commodity_id, price, location_id, transaction_type)
                     pause_time = 477 + randint(17, 250)
                     print(time.ctime())
-                    print(message)
                     print("sleeping for %d minutes\n" % int(pause_time / 60))
                     time.sleep(pause_time)
             except IndexError:

@@ -3,15 +3,17 @@ from httplib2 import Http
 from oauth2client import file, client, tools
 
 import settings
-from .prices import PricesStructure
 
 
-class GoogleDocsPrices(PricesStructure):
+class GoogleDocsPrices:
     spreadsheet_id = settings.TRADE_SPREADSHEET_ID
+    release = settings.TRADE_SC_RELEASE
+    cells_range = settings.TRADE_SPREADSHEET_CELLS_RANGE
     commodities = settings.TRADE_COMMODITIES
-    release = settings.TRADE_SC_RELEASE,
-    cells_range = settings.TRADE_SPREADSHEET_CELLS_RANGE,
-    range_name = '%s!%s' % (release, cells_range)
+
+    def __init__(self):
+        self.prices = {}
+        self.update_database()
 
     @staticmethod
     def _fill_missing_blank_cells(values):
@@ -33,8 +35,8 @@ class GoogleDocsPrices(PricesStructure):
             credentials = tools.run_flow(flow, store)
         service = build('sheets', 'v4', http=credentials.authorize(Http()))
 
-        result = service.spreadsheets().values().get(spreadsheetId=self.spreadsheet_id,
-                                                     range=self.range_name).execute()
+        range_name = '%s!%s' % (self.release, self.cells_range)
+        result = service.spreadsheets().values().get(spreadsheetId=self.spreadsheet_id, range=range_name).execute()
         return self._fill_missing_blank_cells(result.get('values', []))
 
     @staticmethod
@@ -51,7 +53,7 @@ class GoogleDocsPrices(PricesStructure):
 
     def _build_locations(self, locations, celestial_bodies):
         self.locations = {
-            location: celestial_bodies[index]
+            location.replace("HDMS-", "HMC "): celestial_bodies[index]
             for index, location in enumerate(locations) if location
         }
 
@@ -87,9 +89,14 @@ class GoogleDocsPrices(PricesStructure):
                                 item_prices[transaction] = {price: [location]}
                     self.prices[item_name] = item_prices
 
-    def _initiate_database(self):
-        stored_data = self.database.get_trade_data()
-        if stored_data:
-            self.locations, self.prices = stored_data
-        else:
-            self.update_database()
+    def update_database(self):
+        self._update_data_structure()
+
+
+if __name__ == '__main__':
+    from base_astro_bot.trade.data_rat_structure import DataRatPrices
+
+    docs = GoogleDocsPrices()
+
+    data_rat = DataRatPrices()
+    data_rat.update(docs.prices)

@@ -55,7 +55,7 @@ REPORT_SHIP_PRICE_LIST = [
 TRADE_GOOGLE_SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
 TRADE_SPREADSHEET_ID = '16vZzeCHnDIVRmKeqN4VHqy5Rm3nkkLrsig2odQTxuNo'
 TRADE_SPREADSHEET_CELLS_RANGE = 'B3:CD31'
-TRADE_SC_RELEASE = '3.3.5 in progess'
+TRADE_SC_RELEASE = '3.3.6'
 TRADE_COMMODITIES = {
         "Agricium",
         "Agricultural",

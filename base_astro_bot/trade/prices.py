@@ -48,6 +48,6 @@ class TradeAssistant(PricesStructure):
 if __name__ == '__main__':
     from tabulate import tabulate
     ta = TradeAssistant()
-    for route in ta.get_trade_routes():
-        output = tabulate(route, headers='keys', tablefmt='presto')
+    for single_route in ta.get_trade_routes():
+        output = tabulate(single_route, headers='keys', tablefmt='presto')
         print(output)

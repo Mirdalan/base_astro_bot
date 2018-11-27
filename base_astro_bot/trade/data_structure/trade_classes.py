@@ -1,4 +1,4 @@
-from base_astro_bot.trade.data_structure import DataItem, CommodityPrice
+from .data_classes import DataItem
 
 
 class Commodity(DataItem):
@@ -91,3 +91,23 @@ class Commodity(DataItem):
             "best_income": best_income,
             "routes": routes_data
         }
+
+
+class CommodityPrice(DataItem):
+
+    @property
+    def commodity_id(self):
+        return self.get('price_commodity')
+
+    @property
+    def location(self):
+        location_id = self.get('price_location')
+        return self._locations.get(location_id)
+
+    @property
+    def type(self):
+        return self.get('price_type')
+
+    @property
+    def value(self):
+        return self.get('price_unit_price')

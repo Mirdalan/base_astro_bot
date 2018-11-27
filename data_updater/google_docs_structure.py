@@ -53,7 +53,7 @@ class GoogleDocsPrices:
 
     def _build_locations(self, locations, celestial_bodies):
         self.locations = {
-            location.replace("HDMS-", "HMC "): celestial_bodies[index]
+            location: celestial_bodies[index]
             for index, location in enumerate(locations) if location
         }
 
@@ -69,8 +69,9 @@ class GoogleDocsPrices:
                     celestial_bodies = self._populate_merged_cells(row)
                 elif 'Port Olisar' in row:
                     if celestial_bodies:
+                        row = [item.replace("HDMS-", "HMC ") for item in row]   # fix inconsistence in names
                         self._build_locations(row, celestial_bodies)
-                    locations = self._populate_merged_cells(row)
+                        locations = self._populate_merged_cells(row)
                 elif 'Profit' in row:
                     self._value_type_row = row
                 elif locations and celestial_bodies and self._value_type_row and row[0].strip() in self.commodities:
@@ -94,7 +95,7 @@ class GoogleDocsPrices:
 
 
 if __name__ == '__main__':
-    from base_astro_bot.trade.data_rat_structure import DataRatPrices
+    from data_updater.data_rat_structure import DataRatPrices
 
     docs = GoogleDocsPrices()
 

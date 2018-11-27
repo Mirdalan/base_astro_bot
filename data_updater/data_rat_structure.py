@@ -1,7 +1,7 @@
 from random import randint
 import time
 
-from .data_rat_client import TradeClient
+from base_astro_bot.trade.data_rat_client import TradeClient
 
 
 class DataRatPrices:

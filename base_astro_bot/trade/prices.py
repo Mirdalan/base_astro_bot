@@ -31,12 +31,23 @@ class PricesStructure:
 
     def update_database(self):
         self._update_data_structure()
-        self.database.save_trade_data(self.locations, self.prices)
+        self.database.save_trade_data(self.celestial_bodies, self.locations, self.commodities, self.prices)
+
+
+class TradeAssistant(PricesStructure):
+
+    def get_trade_routes(self, cargo=576, money=50000, start_location=None, end_location=None, avoid=(),
+                         allow_illegal=True, max_commodities=3):
+        all_routes = [commodity.get_routes(cargo, money, start_location, end_location, avoid)
+                      for commodity in self.commodities.values() if allow_illegal or commodity.legal]
+        all_routes.sort(key=lambda item: item.get('best_income'), reverse=True)
+
+        return [route['routes'] for route in all_routes[:max_commodities]]
 
 
 if __name__ == '__main__':
     from tabulate import tabulate
-    from base_astro_bot.trade.data_rat_client import save_to_temp_file
-    prices = PricesStructure()
-    widow = prices.commodities.match_exact_name("widow")
-    save_to_temp_file(tabulate(widow.get_routes_table(), headers='keys'))
+    ta = TradeAssistant()
+    for route in ta.get_trade_routes():
+        output = tabulate(route, headers='keys', tablefmt='presto')
+        print(output)

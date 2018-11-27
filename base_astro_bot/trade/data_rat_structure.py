@@ -62,13 +62,14 @@ class DataRatPrices:
                     print("Found %s. Skipping." % message)
                     continue
                 else:
-                    print("Didn't find %s. Updating...\n" % message)
+                    print("\nDidn't find %s. Updating..." % message)
                     self.client.update_price(commodity_id, price, location_id, transaction_type)
-                    pause_time = 477 + randint(17, 250)
-                    print(time.ctime())
-                    print("sleeping for %d minutes\n" % int(pause_time / 60))
+                    pause_time = 177 + randint(0, 48)
+                    print("done @", time.ctime(), "Now sleeping for %d seconds.\n" % pause_time)
                     time.sleep(pause_time)
             except IndexError:
+                break
+            except ValueError:
                 break
 
     def __bool__(self):

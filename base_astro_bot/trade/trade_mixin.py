@@ -9,8 +9,8 @@ class TradeMixin(BaseMixinClass, ABC):
     trade = None
 
     def get_trade_messages(self, args):
-        budget = 1000000000
-        cargo = 1000000000
+        budget = 50000
+        cargo = 576
         avoid = []
         if args.budget:
             budget = float(args.budget)
@@ -23,7 +23,9 @@ class TradeMixin(BaseMixinClass, ABC):
         if args.avoid:
             avoid = [item.strip() for item in args.avoid.split(",")]
 
-        result = self.trade.get_trade_routes(cargo, budget, avoid, args.start_location, args.end_location, args.legal)
+        allow_illegal = not args.legal
+        result = self.trade.get_trade_routes(cargo, budget, args.start_location, args.end_location,
+                                             avoid, allow_illegal)
         return [self.print_dict_table(route, tablefmt="presto") for route in result]
 
     def update_trade_data(self):

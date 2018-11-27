@@ -1,7 +1,5 @@
 from abc import ABC
 
-from tabulate import tabulate
-
 from ..base_mixin import BaseMixinClass
 
 
@@ -24,11 +22,10 @@ class TradeMixin(BaseMixinClass, ABC):
             avoid = [item.strip() for item in args.avoid.split(",")]
 
         allow_illegal = not args.legal
-        for commodity_name, routes_table in self.trade.get_trade_routes(cargo, budget, args.start_location,
-                                                                        args.end_location, avoid, allow_illegal):
-            table_string = " commodity      | %s\n" % commodity_name.upper()
-            table_string += tabulate(routes_table, tablefmt='presto')
-            yield table_string
+
+        arguments = (cargo, budget, args.start_location, args.end_location, avoid, allow_illegal)
+        for commodity_name, routes_table in self.trade.get_trade_routes(*arguments):
+            yield self.trade.format_table(commodity_name, routes_table)
 
     def update_trade_data(self):
         self.trade.update_database()

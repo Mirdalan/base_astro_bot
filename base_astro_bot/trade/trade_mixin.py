@@ -24,9 +24,11 @@ class TradeMixin(BaseMixinClass, ABC):
             avoid = [item.strip() for item in args.avoid.split(",")]
 
         allow_illegal = not args.legal
-        result = self.trade.get_trade_routes(cargo, budget, args.start_location, args.end_location,
-                                             avoid, allow_illegal)
-        return [self.print_dict_table(route, tablefmt="presto") for route in result]
+        for commodity_name, routes_table in self.trade.get_trade_routes(cargo, budget, args.start_location,
+                                                                        args.end_location, avoid, allow_illegal):
+            table_string = " commodity      | %s\n" % commodity_name.upper()
+            table_string += tabulate(routes_table, tablefmt='presto')
+            yield table_string
 
     def update_trade_data(self):
         self.trade.update_database()

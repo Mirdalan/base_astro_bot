@@ -38,16 +38,23 @@ class TradeAssistant(PricesStructure):
 
     def get_trade_routes(self, cargo=576, money=50000, start_location=None, end_location=None, avoid=(),
                          allow_illegal=True, max_commodities=3):
-        all_routes = [commodity.get_routes(cargo, money, start_location, end_location, avoid)
-                      for commodity in self.commodities.values() if allow_illegal or commodity.legal]
-        all_routes.sort(key=lambda item: item.get('best_income'), reverse=True)
+        all_routes = []
+        for commodity in self.commodities.values():
+            commodity_routes = commodity.get_routes(cargo, money, start_location, end_location, avoid)
+            if commodity_routes and (commodity.legal or allow_illegal):
+                all_routes.append(commodity_routes)
 
-        return [route['routes'] for route in all_routes[:max_commodities]]
+        if all_routes:
+            all_routes.sort(key=lambda item: item.get('best_income'), reverse=True)
+
+            return [(route['commodity_name'], route['table']) for route in all_routes[:max_commodities]]
 
 
 if __name__ == '__main__':
     from tabulate import tabulate
     ta = TradeAssistant()
-    for single_route in ta.get_trade_routes():
-        output = tabulate(single_route, headers='keys', tablefmt='presto')
-        print(output)
+    for commodity_name, routes_table in ta.get_trade_routes():
+        table_string = " commodity      | %s\n" % commodity_name.upper()
+        table_string += tabulate(routes_table, tablefmt='presto')
+        print(table_string)
+        print(len(table_string), len(routes_table))

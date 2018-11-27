@@ -1,4 +1,7 @@
 
+class TableDict(dict):
+    pass
+
 
 class DataItem(dict):
     def __init__(self, item, parents=None, locations=None, prices=None):
@@ -61,7 +64,11 @@ class Location(DataItem):
 
     @property
     def parents_string(self):
-        return " , ".join([parent.name for parent in self._parents])
+        return ", ".join([parent.name for parent in self._parents])
+
+    @property
+    def short_string(self):
+        return "%s @ %s" % (self.name, self.parent.name)
 
     @property
     def full_string(self):

@@ -62,10 +62,24 @@ class Commodity(DataItem):
             if location_matches_conditions(buy, start_location) and location_matches_conditions(sell, end_location):
                 yield buy, sell
 
-    def get_routes(self, cargo=576, money=50000, start_location=None, end_location=None, avoid=()):
+    def get_routes(self, cargo=576, money=50000, start_location=None, end_location=None, avoid=(), max_routes=4):
+
+        def duplicate_value_route():
+            for item in routes_data:
+                if buy.value == item['buy price'] and sell.value == item['sell price']:
+                    if buy.location.short_string not in item['buy locations']:
+                        item['buy locations'] += "\n%s" % buy.location.short_string
+                    if sell.location.short_string not in item['sell locations']:
+                        item['sell locations'] += "\n%s" % sell.location.short_string
+                    return True
+
         routes_data = []
         best_income = 0.0
         for buy, sell in self.iterate_filtered_routes(start_location, end_location, avoid):
+
+            if duplicate_value_route():
+                continue
+
             bought_units = cargo * 100
             spent_money = bought_units * buy.value
             if spent_money > money:
@@ -77,20 +91,25 @@ class Commodity(DataItem):
                 best_income = income
 
             routes_data.append({
-                'commodity': self.name,
                 'invested money': spent_money,
                 'income': income,
                 'bought units': round(bought_units, 2),
                 'buy price': buy.value,
-                'buy location': buy.location.full_string,
+                'buy locations': buy.location.short_string,
                 'sell price': sell.value,
-                'sell location': sell.location.full_string
+                'sell locations': sell.location.short_string
             })
-        routes_data.sort(key=lambda item: item.get('income'), reverse=True)
-        return {
-            "best_income": best_income,
-            "routes": routes_data
-        }
+        if routes_data:
+            routes_data.sort(key=lambda item: item.get('income'), reverse=True)
+            routes_data = routes_data[:max_routes]
+            table = [[key] + [item[key] for item in routes_data] for key in routes_data[0].keys()]
+
+            return {
+                'commodity_name': self.name,
+                'best_income': best_income,
+                'routes': routes_data,
+                'table': table
+            }
 
 
 class CommodityPrice(DataItem):

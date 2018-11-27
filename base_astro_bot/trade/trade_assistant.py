@@ -53,8 +53,10 @@ class TradeAssistant(PricesStructure):
 if __name__ == '__main__':
     from tabulate import tabulate
     ta = TradeAssistant()
-    for commodity_name, routes_table in ta.get_trade_routes():
-        table_string = " commodity      | %s\n" % commodity_name.upper()
-        table_string += tabulate(routes_table, tablefmt='presto')
-        print(table_string)
-        print(len(table_string), len(routes_table))
+    for commodity_name, routes_table in ta.get_trade_routes(allow_illegal=False):
+        table_string = tabulate(routes_table, tablefmt='presto')
+        line_length = max(len(line) for line in table_string.splitlines())
+        header_position = int(line_length * 0.25)
+        output_string = " commodity      |%s%s\n%s\n" % (" "*header_position, commodity_name, "-" * line_length)
+        output_string += table_string
+        print(output_string)

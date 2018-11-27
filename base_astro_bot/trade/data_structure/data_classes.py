@@ -48,6 +48,11 @@ class Location(DataItem):
         return self.get('location_name')
 
     @property
+    def short_name(self):
+        short_name = self.name.replace("Mining ", "M").replace("Research ", "R")
+        return short_name.replace("Area", "A").replace("Outpost", "O")
+
+    @property
     def parent(self):
         return self._parents[0]
 
@@ -68,7 +73,7 @@ class Location(DataItem):
 
     @property
     def short_string(self):
-        return "%s @ %s" % (self.name, self.parent.name)
+        return "%s @ %s" % (self.short_name, self.parent.name)
 
     @property
     def full_string(self):

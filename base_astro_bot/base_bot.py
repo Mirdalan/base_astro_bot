@@ -2,6 +2,7 @@ import threading
 import time
 
 from tabulate import tabulate
+from pymongo import MongoClient
 import pafy
 
 from .utils import DiscordAttachmentHandler, MyLogger
@@ -18,6 +19,7 @@ class BaseBot(RsiMixin, TradeMixin, FleetMixin):
     max_characters = settings.MESSAGE_MAX_CHARACTERS
     max_ships = settings.MESSAGE_MAX_SHIPS
     ship_data_headers = settings.SHIP_DATA_HEADERS
+    mongo_uri = settings.MONGO_CONNECTION_STRING
 
     def __init__(self):
         self.logger = MyLogger(log_file_name=settings.LOG_FILE, logger_name=settings.LOGGER_NAME, prefix="[BOT]")
@@ -26,6 +28,7 @@ class BaseBot(RsiMixin, TradeMixin, FleetMixin):
         self.bot_user = self._get_bot_user()
 
         self.database_manager = DatabaseManager(log_file=settings.LOG_FILE)
+        self.mongo = MongoClient(self.mongo_uri)
 
         self.attachments_handler = DiscordAttachmentHandler()
 

@@ -1,4 +1,3 @@
-from tabulate import tabulate
 from pymongo import MongoClient
 
 from base_astro_bot.utils import MyLogger
@@ -74,16 +73,8 @@ class TradeAssistant(PricesStructure):
 
             return [(route['commodity_name'], route['table']) for route in all_routes[:max_commodities]]
 
-    @staticmethod
-    def format_table(commodity_name, routes_table):
-        table_string = tabulate(routes_table, tablefmt='presto')
-        line_length = max(len(line) for line in table_string.splitlines())
-        header_position = int(line_length * 0.3)
-        header_string = " commodity      |%s%s\n%s\n" % (" " * header_position, commodity_name, "-" * line_length)
-        return "```%s%s```" % (header_string, table_string)
-
 
 if __name__ == '__main__':
     ta = TradeAssistant()
     for _commodity_name, _routes_table in ta.get_trade_routes():
-        print(ta.format_table(_commodity_name, _routes_table))
+        print(_routes_table)

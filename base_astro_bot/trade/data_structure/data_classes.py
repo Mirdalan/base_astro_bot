@@ -50,7 +50,10 @@ class Location(DataItem):
     @property
     def short_name(self):
         short_name = self.name.replace("Mining", "M.").replace("Research", "R.")
-        return short_name.replace(" Area", "A.").replace(" Outpost", "O.").replace(" Facility", "F.")
+        short_name = short_name.replace(" Area", "A.").replace(" Outpost", "O.").replace(" Facility", "F.")
+        if len(short_name) > 20:
+            short_name = short_name[:20]
+        return short_name
 
     @property
     def parent(self):

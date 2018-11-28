@@ -9,7 +9,7 @@ with open("README.md") as f:
 
 setup(
     name='base_astro_bot',
-    version='1.1.0a3',
+    version='1.1.0a4',
     description='Base bot class for Star Citizen players',
     long_description=long_description,
     long_description_content_type="text/markdown",

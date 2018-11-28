@@ -28,5 +28,7 @@ class TradeMixin(BaseMixinClass, ABC):
             yield self.trade.format_table(commodity_name, routes_table)
 
     def update_trade_data(self):
-        self.trade.update_database()
-        return self.messages.success
+        if self.trade.update_data():
+            return self.messages.success
+        else:
+            return self.messages.something_went_wrong

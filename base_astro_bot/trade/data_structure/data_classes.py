@@ -49,8 +49,8 @@ class Location(DataItem):
 
     @property
     def short_name(self):
-        short_name = self.name.replace("Mining ", "M").replace("Research ", "R")
-        return short_name.replace("Area", "A").replace("Outpost", "O")
+        short_name = self.name.replace("Mining", "M.").replace("Research", "R.")
+        return short_name.replace(" Area", "A.").replace(" Outpost", "O.").replace(" Facility", "F.")
 
     @property
     def parent(self):

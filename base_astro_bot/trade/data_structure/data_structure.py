@@ -19,6 +19,9 @@ class DataStructure(dict):
         item_class = choose_item_class(items_list)
         super().__init__({item['id']: item_class(item, **kwargs) for item in items_list})
 
+    def get_list(self):
+        return list(self.values())
+
     def match_exact_name(self, query):
         for item in self.values():
             if query.lower() == item.name.lower():

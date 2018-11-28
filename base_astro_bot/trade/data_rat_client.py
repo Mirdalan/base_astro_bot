@@ -4,22 +4,43 @@ import json
 import settings
 
 
+def handles_request_exception(func):
+    def func_wrapper(*args, **kwargs):
+        try:
+            return func(*args, **kwargs)
+        except requests.exceptions.RequestException:
+            return None
+    return func_wrapper
+
+
 class BaseClient:
     base_url = "https://scm.oceandatarat.org:8443/scm-server/api/v1/"
     token = settings.SCM_TOKEN
     headers = {'authorization': settings.SCM_TOKEN}
 
+    @handles_request_exception
+    def get_request(self, endpoint):
+        return requests.get(self.base_url + endpoint, headers=self.headers).json()
+
+    @handles_request_exception
+    def patch_request(self, endpoint, payload):
+        return requests.patch(self.base_url + endpoint, json=payload, headers=self.headers)
+
+    @handles_request_exception
+    def post_request(self, endpoint, payload):
+        return requests.post(self.base_url + endpoint, json=payload, headers=self.headers)
+
     def get_containers(self):
-        return requests.get(self.base_url + 'containers', headers=self.headers).json()
+        return self.get_request('containers')
 
     def get_locations(self):
-        return requests.get(self.base_url + 'locations', headers=self.headers).json()
+        return self.get_request('locations')
 
 
 class TradeClient(BaseClient):
 
     def get_commodities(self):
-        return requests.get(self.base_url + 'commodities', headers=self.headers).json()
+        return self.get_request('commodities')
 
     def get_prices(self):
         """
@@ -34,7 +55,7 @@ class TradeClient(BaseClient):
                   }
                 ]
         """
-        return requests.get(self.base_url + 'commodity_prices', headers=self.headers).json()
+        return self.get_request('commodity_prices')
 
     def update_price(self, commodity_id, price, location_id, transaction_type="buy"):
         payload = {
@@ -43,7 +64,7 @@ class TradeClient(BaseClient):
                     "price_commodity": commodity_id,
                     "price_unit_price": price
                   }
-        return requests.patch(self.base_url + 'commodity_prices', json=payload, headers=self.headers)
+        return self.patch_request('commodity_prices', payload)
 
     def add_transaction(self, commodity_id, price, units, location_id, transaction_type):
         payload = {
@@ -53,13 +74,13 @@ class TradeClient(BaseClient):
                     "transaction_units": units,
                     "transaction_unit_price": price
                   }
-        return requests.post(self.base_url + 'commodity_transactions', json=payload, headers=self.headers)
+        return self.post_request('commodity_transactions', payload)
 
 
 class MiningClient(BaseClient):
 
     def get_resources(self):
-        return requests.get(self.base_url + 'resources', headers=self.headers).json()
+        return self.get_request('resources')
 
     def get_prices(self):
         """
@@ -74,7 +95,7 @@ class MiningClient(BaseClient):
                   }
                 ]
         """
-        return requests.get(self.base_url + 'resource_prices', headers=self.headers).json()
+        return self.get_request('resource_prices')
 
     def update_price(self, resource_id, price, location_id, transaction_type="buy"):
         payload = {
@@ -83,7 +104,7 @@ class MiningClient(BaseClient):
                     "price_resource": resource_id,
                     "price_unit_price": price
                   }
-        return requests.patch(self.base_url + 'resource_prices', json=payload, headers=self.headers)
+        return self.patch_request('resource_prices', payload)
 
 
 def save_to_temp_file(text, file_name="temp.txt"):

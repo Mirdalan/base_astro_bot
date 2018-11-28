@@ -69,10 +69,8 @@ class TradeData(Base):
     __tablename__ = 'trade_data'
 
     id = Column(Integer, primary_key=True)
-    celestial_bodies = Column(Text)
     locations = Column(Text)
     prices = Column(Text)
-    commodities = Column(Text)
 
 
 class FoundForumThreads(Base):

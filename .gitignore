@@ -2,6 +2,7 @@
 
 database.sqlite
 logs/
+google*.json
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template

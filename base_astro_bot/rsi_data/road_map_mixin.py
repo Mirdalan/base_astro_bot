@@ -54,7 +54,7 @@ class RoadMapMixin(BaseMixinClass, ABC):
             result = self.rsi_data.road_map.get()
             result = self._get_road_map_data_message(result, find=args.find)
         elif args.update:
-            result = self.rsi_data.road_map.update_database()
+            result = self.rsi_data.road_map.update_data()
             result = [self.messages.success] if result else [self.messages.something_went_wrong]
         else:
             result = self.rsi_data.road_map.get_releases()

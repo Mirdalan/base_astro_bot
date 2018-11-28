@@ -235,16 +235,21 @@ class DatabaseManager:
 
     def save_trade_data(self, *trade_data):
         self.logger.debug("Updating Trade Data.")
-        locations, prices = self.get_json_strings(*trade_data)
+        celestial_bodies, locations, commodities, prices = self.get_json_strings(*trade_data)
 
         query = self.sql_alchemy_session.query(database_models.TradeData)
         try:
             old_data = query.one()
+            old_data.celestial_bodies = celestial_bodies
             old_data.locations = locations
+            old_data.commodities = commodities
             old_data.prices = prices
         except exc.NoResultFound:
             self.logger.debug("No Trade Data in database. Creating object.")
-            self.sql_alchemy_session.add(database_models.TradeData(locations=locations, prices=prices))
+            self.sql_alchemy_session.add(database_models.TradeData(celestial_bodies=celestial_bodies,
+                                                                   locations=locations,
+                                                                   commodities=commodities,
+                                                                   prices=prices))
         except exc.MultipleResultsFound:
             self.logger.error("Multiple Trade Data objects in database!")
         self.sql_alchemy_session.commit()

@@ -2,14 +2,14 @@ from googleapiclient.discovery import build
 from httplib2 import Http
 from oauth2client import file, client, tools
 
-import settings
+from . import updater_settings
 
 
 class GoogleDocsPrices:
-    spreadsheet_id = settings.TRADE_SPREADSHEET_ID
-    release = settings.TRADE_SC_RELEASE
-    cells_range = settings.TRADE_SPREADSHEET_CELLS_RANGE
-    commodities = settings.TRADE_COMMODITIES
+    spreadsheet_id = updater_settings.TRADE_SPREADSHEET_ID
+    release = updater_settings.TRADE_SC_RELEASE
+    cells_range = updater_settings.TRADE_SPREADSHEET_CELLS_RANGE
+    commodities = updater_settings.TRADE_COMMODITIES
 
     def __init__(self):
         self.prices = {}
@@ -31,7 +31,7 @@ class GoogleDocsPrices:
         store = file.Storage('google_token.json')
         credentials = store.get()
         if not credentials or credentials.invalid:
-            flow = client.flow_from_clientsecrets('google_credentials.json', settings.TRADE_GOOGLE_SCOPES)
+            flow = client.flow_from_clientsecrets('google_credentials.json', updater_settings.TRADE_GOOGLE_SCOPES)
             credentials = tools.run_flow(flow, store)
         service = build('sheets', 'v4', http=credentials.authorize(Http()))
 

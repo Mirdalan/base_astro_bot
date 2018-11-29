@@ -1,0 +1,58 @@
+[
+    {
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_resource": "5bb77e47298e4f8ac549fc3d",
+        "price_date": "2018-11-18T14:51:41.665Z",
+        "price_type": "sell",
+        "price_unit_price": 28.436869253195784,
+        "id": "5bf17c7d12c026d3aca20e8b"
+    },
+    {
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_resource": "5bb77e47298e4f8ac549fc30",
+        "price_date": "2018-11-18T14:51:41.664Z",
+        "price_type": "sell",
+        "price_unit_price": 1.217125026648836,
+        "id": "5bf17c7d12c026d3aca20e89"
+    },
+    {
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_resource": "5bb77e47298e4f8ac549fc3a",
+        "price_date": "2018-11-18T14:50:33.023Z",
+        "price_type": "sell",
+        "price_unit_price": 6.032754010695187,
+        "id": "5bf17c3912c026d3aca20e08"
+    },
+    {
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_resource": "5bb77e47298e4f8ac549fc36",
+        "price_date": "2018-11-18T14:50:32.972Z",
+        "price_type": "sell",
+        "price_unit_price": 5.696283095723014,
+        "id": "5bf17c3812c026d3aca20e01"
+    },
+    {
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_resource": "5bb77e47298e4f8ac549fc31",
+        "price_date": "2018-11-18T14:48:32.280Z",
+        "price_type": "sell",
+        "price_unit_price": 1.2171372930866602,
+        "id": "5bf17bc012c026d3aca20d35"
+    },
+    {
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_resource": "5bb77e47298e4f8ac549fc40",
+        "price_type": "sell",
+        "price_date": "2018-11-18T14:48:32.278Z",
+        "price_unit_price": 3.8647342995169085,
+        "id": "5bf0266a12c026d3aca02dbd"
+    },
+    {
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_resource": "5bb77e47298e4f8ac549fc37",
+        "price_type": "sell",
+        "price_date": "2018-11-17T14:32:10.874Z",
+        "price_unit_price": 2.532051282051282,
+        "id": "5bf018e612c026d3aca01a0c"
+    }
+]

@@ -1,0 +1,121 @@
+[
+    {
+        "container_name": "Aberdeen",
+        "container_description": "",
+        "container_type": "moon",
+        "container_parent": "5bb6858bbeca6870d34e8817",
+        "container_children": [],
+        "id": "5bb6858bbeca6870d34e881d"
+    },
+    {
+        "container_name": "ArcCorp",
+        "container_description": "",
+        "container_type": "planet",
+        "container_parent": "5bb6858bbeca6870d34e8813",
+        "container_children": [],
+        "id": "5bb6858bbeca6870d34e8815"
+    },
+    {
+        "container_name": "Arial",
+        "container_description": "",
+        "container_type": "moon",
+        "container_parent": "5bb6858bbeca6870d34e8817",
+        "container_children": [],
+        "id": "5bb6858bbeca6870d34e881c"
+    },
+    {
+        "container_name": "Celin",
+        "container_description": "",
+        "container_type": "moon",
+        "container_parent": "5bb6858bbeca6870d34e8816",
+        "container_children": [],
+        "id": "5bb6858bbeca6870d34e8819"
+    },
+    {
+        "container_name": "Crusader",
+        "container_description": "",
+        "container_type": "planet",
+        "container_parent": "5bb6858bbeca6870d34e8813",
+        "container_children": [
+            "5bb6858bbeca6870d34e8819",
+            "5bb6858bbeca6870d34e881a",
+            "5bb6858bbeca6870d34e881b"
+        ],
+        "id": "5bb6858bbeca6870d34e8816"
+    },
+    {
+        "container_name": "Daymar",
+        "container_description": "",
+        "container_type": "moon",
+        "container_parent": "5bb6858bbeca6870d34e8816",
+        "container_children": [],
+        "id": "5bb6858bbeca6870d34e881a"
+    },
+    {
+        "container_name": "Delamar",
+        "container_description": "",
+        "container_type": "asteroid",
+        "container_parent": "5bb6858bbeca6870d34e8813",
+        "container_children": [],
+        "id": "5bb6858bbeca6870d34e8814"
+    },
+    {
+        "container_name": "Hurston",
+        "container_description": "",
+        "container_type": "planet",
+        "container_parent": "5bb6858bbeca6870d34e8813",
+        "container_children": [
+            "5bb6858bbeca6870d34e881c",
+            "5bb6858bbeca6870d34e881d",
+            "5bb6858bbeca6870d34e881e",
+            "5bb6858bbeca6870d34e881f"
+        ],
+        "id": "5bb6858bbeca6870d34e8817"
+    },
+    {
+        "container_name": "Ita",
+        "container_description": "",
+        "container_type": "moon",
+        "container_parent": "5bb6858bbeca6870d34e8817",
+        "container_children": [],
+        "id": "5bb6858bbeca6870d34e881f"
+    },
+    {
+        "container_name": "Magda",
+        "container_description": "",
+        "container_type": "moon",
+        "container_parent": "5bb6858bbeca6870d34e8817",
+        "container_children": [],
+        "id": "5bb6858bbeca6870d34e881e"
+    },
+    {
+        "container_name": "Microtech",
+        "container_description": "",
+        "container_type": "planet",
+        "container_parent": "5bb6858bbeca6870d34e8813",
+        "container_children": [],
+        "id": "5bb6858bbeca6870d34e8818"
+    },
+    {
+        "container_name": "Stanton",
+        "container_description": "The only home we got!",
+        "container_type": "system",
+        "container_parent": "",
+        "container_children": [
+            "5bb6858bbeca6870d34e8814",
+            "5bb6858bbeca6870d34e8815",
+            "5bb6858bbeca6870d34e8816",
+            "5bb6858bbeca6870d34e8817",
+            "5bb6858bbeca6870d34e8818"
+        ],
+        "id": "5bb6858bbeca6870d34e8813"
+    },
+    {
+        "container_name": "Yela",
+        "container_description": "",
+        "container_type": "moon",
+        "container_parent": "5bb6858bbeca6870d34e8816",
+        "container_children": [],
+        "id": "5bb6858bbeca6870d34e881b"
+    }
+]

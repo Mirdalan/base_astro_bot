@@ -1,0 +1,132 @@
+[
+    {
+        "commodity_name": "Agricium",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f01"
+    },
+    {
+        "commodity_name": "Agricultural Supplies",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f02"
+    },
+    {
+        "commodity_name": "Altruciatoxin",
+        "commodity_illegal": true,
+        "id": "5bb6a7f7574bd8753cce3f03"
+    },
+    {
+        "commodity_name": "Aluminum",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f04"
+    },
+    {
+        "commodity_name": "Astatine",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f05"
+    },
+    {
+        "commodity_name": "Beryl",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f06"
+    },
+    {
+        "commodity_name": "Borase",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f07"
+    },
+    {
+        "commodity_name": "Chlorine",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f08"
+    },
+    {
+        "commodity_name": "Copper",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f09"
+    },
+    {
+        "commodity_name": "Corundum",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f0a"
+    },
+    {
+        "commodity_name": "Diamond",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f0b"
+    },
+    {
+        "commodity_name": "Distilled Spirits",
+        "commodity_illegal": true,
+        "id": "5bb6a7f7574bd8753cce3f0c"
+    },
+    {
+        "commodity_name": "Fluorine",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f0d"
+    },
+    {
+        "commodity_name": "Gold",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f0e"
+    },
+    {
+        "commodity_name": "Hydrogen",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f0f"
+    },
+    {
+        "commodity_name": "Iodine",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f10"
+    },
+    {
+        "commodity_name": "Laranite",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f11"
+    },
+    {
+        "commodity_name": "Medical Supplies",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f12"
+    },
+    {
+        "commodity_name": "Processed Food",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f13"
+    },
+    {
+        "commodity_name": "Quartz",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f14"
+    },
+    {
+        "commodity_name": "Scrap",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f15"
+    },
+    {
+        "commodity_name": "Stims",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f16"
+    },
+    {
+        "commodity_name": "Titanium",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f17"
+    },
+    {
+        "commodity_name": "Tungsten",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f18"
+    },
+    {
+        "commodity_name": "Waste",
+        "commodity_illegal": false,
+        "id": "5bb6a7f7574bd8753cce3f19"
+    },
+    {
+        "commodity_name": "WiDoW",
+        "commodity_illegal": true,
+        "id": "5bb6a7f7574bd8753cce3f1a"
+    }
+]

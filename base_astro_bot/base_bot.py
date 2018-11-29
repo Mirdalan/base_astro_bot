@@ -38,7 +38,7 @@ class BaseBot(RsiMixin, TradeMixin, FleetMixin):
         self.monitoring_thread = threading.Thread(target=self.monitoring_procedure)
         self.monitoring_thread.start()
 
-        self.trade = TradeAssistant(log_file=settings.LOG_FILE)
+        self.trade = TradeAssistant(log_file=settings.LOG_FILE, mongo_client=self.mongo)
 
         self.help_message = self._get_help_message()
 

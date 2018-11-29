@@ -87,6 +87,8 @@ workflows:
   build_test_publish:
     jobs:
       - test
+      - test-3.5
+      - test-3.7
       - publish:
           requires:
             - test

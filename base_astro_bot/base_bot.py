@@ -5,7 +5,7 @@ from tabulate import tabulate
 from pymongo import MongoClient
 import pafy
 
-from .utils import DiscordAttachmentHandler, MyLogger
+from .utils import MyLogger
 from .database import DatabaseManager
 from .rsi_data import RsiDataParser, RsiMixin
 from .trade import TradeAssistant, TradeMixin
@@ -29,8 +29,6 @@ class BaseBot(RsiMixin, TradeMixin, FleetMixin):
 
         self.database_manager = DatabaseManager(log_file=settings.LOG_FILE)
         self.mongo = MongoClient(self.mongo_uri)
-
-        self.attachments_handler = DiscordAttachmentHandler()
 
         self.rsi_data = RsiDataParser(7600, log_file=settings.LOG_FILE, database_manager=self.database_manager)
         self.report_ship_price_list = settings.REPORT_SHIP_PRICE_LIST

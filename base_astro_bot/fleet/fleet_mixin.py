@@ -5,25 +5,9 @@ from ..base_mixin import BaseMixinClass
 
 
 class FleetMixin(BaseMixinClass, ABC):
-    attachments_handler = None
 
     def get_ship_data_from_name(self, ship_name):
         raise NotImplementedError
-
-    def update_fleet(self, attachments, author):
-        invalid_ships = None
-        for file in attachments.values():
-            self.logger.debug("Checking file %s." % file.filename)
-            try:
-                if file.filename == "shiplist.json":
-                    self.logger.debug("Getting ships list.")
-                    ships = self.attachments_handler.get_ship_list(file.url, self.logger)
-                    ships, invalid_ships = self.rsi_data.verify_ships(ships)
-                    self.database_manager.update_member_ships(ships, author)
-
-            except Exception as unexpected_exception:
-                self.logger.error(str(unexpected_exception))
-        return invalid_ships
 
     def clear_member_fleet(self, author):
         self.database_manager.update_member_ships([], author)

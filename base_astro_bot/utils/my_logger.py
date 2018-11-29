@@ -31,7 +31,7 @@ class MyLogger(logging.Logger):
 
         logging.Logger.__init__(self, logger_name)
 
-        logs_formatter = logging.Formatter(f'%(asctime)s [%(levelname)s]{prefix} %(message)s')
+        logs_formatter = logging.Formatter('%(asctime)s [%(levelname)s]{} %(message)s'.format(prefix))
         self.addFilter(DuplicateFilter())
         self.setLevel(log_level)
 

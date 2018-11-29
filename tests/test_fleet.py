@@ -3,7 +3,7 @@ import os
 
 from .set_path import *
 from base_astro_bot.database import DatabaseManager
-from tests.sample_ships_data import TEST_SHIPS
+from tests.artifacts import TEST_SHIPS
 
 
 class MockUserObject:

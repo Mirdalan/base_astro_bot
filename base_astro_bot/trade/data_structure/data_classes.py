@@ -1,14 +1,11 @@
 
-class TableDict(dict):
-    pass
-
-
 class DataItem(dict):
     def __init__(self, item, parents=None, locations=None, prices=None):
         super().__init__(item)
         self._prices = self._get_prices(prices)
         self._locations = locations
         self._parents = self._get_parents(parents)
+        self._best_sell = self._get_best_sell()
 
     @property
     def id(self):
@@ -19,6 +16,61 @@ class DataItem(dict):
 
     def _get_prices(self, all_prices):
         return {}
+
+    def _get_best_sell(self):
+        return None
+
+
+class Item(DataItem):
+    name_prefix = ""
+
+    def _get_prices(self, all_prices):
+        prices = {'buy': [], 'sell': []}
+        for price in all_prices.values():
+            if price.commodity_id == self.id:
+                prices[price.type].append(price)
+        return prices
+
+    @property
+    def name(self):
+        return self.get('%s_name' % self.name_prefix)
+
+    @property
+    def sell_prices(self):
+        return self._prices['sell']
+
+    def _get_best_sell(self):
+        if self.sell_prices:
+            return max(price.value for price in self.sell_prices)
+
+    @property
+    def best_sell(self):
+        return self._best_sell
+
+    @property
+    def best_sell_locations(self):
+        return [price.location.short_name for price in self.sell_prices if price.value == self.best_sell]
+
+
+class Price(DataItem):
+    name_suffix = ""
+
+    @property
+    def commodity_id(self):
+        return self.get('price_%s' % self.name_suffix)
+
+    @property
+    def location(self):
+        location_id = self.get('price_location')
+        return self._locations.get(location_id)
+
+    @property
+    def type(self):
+        return self.get('price_type')
+
+    @property
+    def value(self):
+        return self.get('price_unit_price')
 
 
 class Container(DataItem):

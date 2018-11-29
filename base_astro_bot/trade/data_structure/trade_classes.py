@@ -1,22 +1,12 @@
-from .data_classes import DataItem
+from .data_classes import Item, Price
 
 
-class Commodity(DataItem):
-
-    def _get_prices(self, all_prices):
-        prices = {'buy': [], 'sell': []}
-        for price in all_prices.values():
-            if price.commodity_id == self.id:
-                prices[price.type].append(price)
-        return prices
-
-    @property
-    def name(self):
-        return self.get('commodity_name')
+class Commodity(Item):
+    name_prefix = "commodity"
 
     @property
     def illegal(self):
-        return self.get('commodity_illegal')
+        return self.get('%s_illegal' % self.name_prefix)
 
     @property
     def legal(self):
@@ -29,14 +19,6 @@ class Commodity(DataItem):
     @property
     def best_buy(self):
         return min(price.value for price in self.buy_prices)
-
-    @property
-    def sell_prices(self):
-        return self._prices['sell']
-
-    @property
-    def best_sell(self):
-        return max(price.value for price in self.buy_prices)
 
     @property
     def best_deal(self):
@@ -105,28 +87,30 @@ class Commodity(DataItem):
             table = [[key] + [item[key] for item in routes_data] for key in routes_data[0].keys()]
 
             return {
-                'commodity_name': self.name,
+                '%s_name' % self.name_prefix: self.name,
                 'best_income': best_income,
                 'routes': routes_data,
                 'table': table
             }
 
 
-class CommodityPrice(DataItem):
-
-    @property
-    def commodity_id(self):
-        return self.get('price_commodity')
-
-    @property
-    def location(self):
-        location_id = self.get('price_location')
-        return self._locations.get(location_id)
+class Resource(Item):
+    name_prefix = "resource"
 
     @property
     def type(self):
-        return self.get('price_type')
+        return self.get('resource_type')
 
-    @property
-    def value(self):
-        return self.get('price_unit_price')
+    def get_prices_table(self):
+        return [{
+            'aUEC/unit': price.value,
+            'Locations': price.location.short_string
+        } for price in self.sell_prices]
+
+
+class CommodityPrice(Price):
+    name_suffix = "commodity"
+
+
+class ResourcePrice(Price):
+    name_suffix = "resource"

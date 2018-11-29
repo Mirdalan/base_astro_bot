@@ -1,0 +1,1722 @@
+[
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0b",
+        "price_location": "5bb75803b6551685e8738128",
+        "price_date": "2018-11-27T12:13:09.483Z",
+        "price_type": "buy",
+        "price_unit_price": 6.4,
+        "id": "5bfd34d512c026d3acb23f87"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e8738127",
+        "price_date": "2018-11-27T12:10:03.000Z",
+        "price_type": "buy",
+        "price_unit_price": 1.16,
+        "id": "5bfd341a12c026d3acb23e6d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e873812b",
+        "price_date": "2018-11-27T12:06:54.885Z",
+        "price_type": "sell",
+        "price_unit_price": 3.44,
+        "id": "5bfd335e12c026d3acb23d4f"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e8738128",
+        "price_date": "2018-11-27T12:03:17.461Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bfd328512c026d3acb23bf6"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f15",
+        "price_location": "5bb75803b6551685e8738129",
+        "price_date": "2018-11-27T11:56:15.934Z",
+        "price_type": "buy",
+        "price_unit_price": 1.55,
+        "id": "5bfd30df12c026d3acb23985"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e873812b",
+        "price_date": "2018-11-27T11:52:40.811Z",
+        "price_type": "buy",
+        "price_unit_price": 1.16,
+        "id": "5bfd300812c026d3acb23842"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e8738127",
+        "price_date": "2018-11-27T11:49:36.273Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bfd2f5012c026d3acb2372a"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e873812a",
+        "price_date": "2018-11-27T11:46:00.231Z",
+        "price_type": "sell",
+        "price_unit_price": 3.44,
+        "id": "5bfd2e7812c026d3acb235c7"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e8738127",
+        "price_date": "2018-11-27T11:43:01.315Z",
+        "price_type": "sell",
+        "price_unit_price": 3.44,
+        "id": "5bfd2dc512c026d3acb234bc"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e8738128",
+        "price_date": "2018-11-27T11:39:13.473Z",
+        "price_type": "sell",
+        "price_unit_price": 3.44,
+        "id": "5bfd2ce112c026d3acb23364"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e8738129",
+        "price_date": "2018-11-27T11:35:30.599Z",
+        "price_type": "sell",
+        "price_unit_price": 3.44,
+        "id": "5bfd2c0212c026d3acb23218"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e8738128",
+        "price_date": "2018-11-27T11:31:46.656Z",
+        "price_type": "buy",
+        "price_unit_price": 1.16,
+        "id": "5bfd2b2212c026d3acb230e1"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e8738126",
+        "price_date": "2018-11-27T11:28:19.991Z",
+        "price_type": "sell",
+        "price_unit_price": 3.44,
+        "id": "5bfd2a5312c026d3acb22fab"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e873812a",
+        "price_date": "2018-11-27T11:24:46.782Z",
+        "price_type": "sell",
+        "price_unit_price": 0.01,
+        "id": "5bfd297e12c026d3acb22e6a"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e873812b",
+        "price_date": "2018-11-27T11:21:00.467Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bfd289c12c026d3acb22cf1"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e8738126",
+        "price_date": "2018-11-27T11:14:08.305Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bfd270012c026d3acb22a8b"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0b",
+        "price_location": "5bb75803b6551685e8738126",
+        "price_date": "2018-11-27T11:10:29.268Z",
+        "price_type": "buy",
+        "price_unit_price": 6.4,
+        "id": "5bfd262512c026d3acb22954"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e8738129",
+        "price_date": "2018-11-27T11:07:07.805Z",
+        "price_type": "buy",
+        "price_unit_price": 1.16,
+        "id": "5bfd255b12c026d3acb22826"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0d",
+        "price_location": "5bb75803b6551685e873820c",
+        "price_date": "2018-11-26T17:02:16.912Z",
+        "price_type": "sell",
+        "price_unit_price": 2.85,
+        "id": "5bfc271812c026d3acb0c8bd"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f14",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T16:58:14.040Z",
+        "price_type": "sell",
+        "price_unit_price": 1.46,
+        "id": "5bfc262612c026d3acb0c768"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-26T16:53:32.718Z",
+        "price_type": "sell",
+        "price_unit_price": 0.01,
+        "id": "5bfc250c12c026d3acb0c5d1"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f17",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T16:48:37.795Z",
+        "price_type": "sell",
+        "price_unit_price": 8.19,
+        "id": "5bfc23e512c026d3acb0c43f"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e873820f",
+        "price_date": "2018-11-26T16:45:36.619Z",
+        "price_type": "buy",
+        "price_unit_price": 3.1,
+        "id": "5bfc233012c026d3acb0c341"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f14",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-26T16:41:06.808Z",
+        "price_type": "sell",
+        "price_unit_price": 1.44,
+        "id": "5bfc222212c026d3acb0c1bf"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0f",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T16:36:29.647Z",
+        "price_type": "sell",
+        "price_unit_price": 1.03,
+        "id": "5bfc210d12c026d3acb0c038"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e873820c",
+        "price_date": "2018-11-26T16:31:34.264Z",
+        "price_type": "buy",
+        "price_unit_price": 0.01,
+        "id": "5bfc1fe612c026d3acb0be99"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f01",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-26T16:27:01.947Z",
+        "price_type": "sell",
+        "price_unit_price": 25.6,
+        "id": "5bfc1ed512c026d3acb0bcf4"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0b",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-26T16:23:59.027Z",
+        "price_type": "sell",
+        "price_unit_price": 6.9,
+        "id": "5bfc1e1f12c026d3acb0bbef"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T16:19:57.311Z",
+        "price_type": "sell",
+        "price_unit_price": 1.18,
+        "id": "5bfc1d2d12c026d3acb0ba7e"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f15",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T16:16:45.823Z",
+        "price_type": "sell",
+        "price_unit_price": 1.67,
+        "id": "5bfc1c6d12c026d3acb0b969"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e8738220",
+        "price_date": "2018-11-26T16:13:38.340Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bfc1bb212c026d3acb0b857"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f11",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-26T16:09:48.465Z",
+        "price_type": "sell",
+        "price_unit_price": 28.55,
+        "id": "5bfc1acc12c026d3acb0b712"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0e",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T16:06:03.500Z",
+        "price_type": "sell",
+        "price_unit_price": 5.92,
+        "id": "5bfc19eb12c026d3acb0b5d0"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f08",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-26T16:02:54.787Z",
+        "price_type": "sell",
+        "price_unit_price": 1.56,
+        "id": "5bfc192e12c026d3acb0b4bd"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f10",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-26T15:59:47.439Z",
+        "price_type": "sell",
+        "price_unit_price": 0.41,
+        "id": "5bfc187312c026d3acb0b3aa"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f06",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T15:54:53.513Z",
+        "price_type": "sell",
+        "price_unit_price": 4.17,
+        "id": "5bfc174d12c026d3acb0b208"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e873821f",
+        "price_date": "2018-11-26T15:50:14.578Z",
+        "price_type": "buy",
+        "price_unit_price": 0.01,
+        "id": "5bfc163612c026d3acb0b07b"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f18",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-26T15:45:37.899Z",
+        "price_type": "sell",
+        "price_unit_price": 3.9,
+        "id": "5bfc152112c026d3acb0aef5"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T15:40:47.171Z",
+        "price_type": "sell",
+        "price_unit_price": 3.4,
+        "id": "5bfc13ff12c026d3acb0ad59"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0b",
+        "price_location": "5bb75803b6551685e873821f",
+        "price_date": "2018-11-26T15:36:22.429Z",
+        "price_type": "buy",
+        "price_unit_price": 6.49,
+        "id": "5bfc12f612c026d3acb0abc8"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f17",
+        "price_location": "5bb75803b6551685e873821f",
+        "price_date": "2018-11-26T15:31:39.255Z",
+        "price_type": "buy",
+        "price_unit_price": 7.72,
+        "id": "5bfc11db12c026d3acb0aa38"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f06",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-26T15:28:20.351Z",
+        "price_type": "sell",
+        "price_unit_price": 4.26,
+        "id": "5bfc111412c026d3acb0a90f"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f11",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T15:18:48.797Z",
+        "price_type": "sell",
+        "price_unit_price": 28.34,
+        "id": "5bfc0ed812c026d3acb0a5e9"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e87381fb",
+        "price_date": "2018-11-26T15:15:21.489Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bfc0e0912c026d3acb0a4bb"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0f",
+        "price_location": "5bb75803b6551685e87381fb",
+        "price_date": "2018-11-26T15:10:29.468Z",
+        "price_type": "sell",
+        "price_unit_price": 1.07,
+        "id": "5bfc0ce512c026d3acb0a31c"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f18",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T15:07:26.516Z",
+        "price_type": "sell",
+        "price_unit_price": 3.79,
+        "id": "5bfc0c2e12c026d3acb0a217"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f10",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T14:59:57.974Z",
+        "price_type": "sell",
+        "price_unit_price": 0.42,
+        "id": "5bfc0a6d12c026d3acb09f9d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f15",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-26T14:56:03.336Z",
+        "price_type": "sell",
+        "price_unit_price": 1.68,
+        "id": "5bfc098312c026d3acb09e4b"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e8738220",
+        "price_date": "2018-11-26T14:52:35.547Z",
+        "price_type": "sell",
+        "price_unit_price": 1.24,
+        "id": "5bfc08b312c026d3acb09d21"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0b",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T14:49:12.468Z",
+        "price_type": "sell",
+        "price_unit_price": 6.74,
+        "id": "5bfc07e812c026d3acb09bf9"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f08",
+        "price_location": "5bb75803b6551685e87381fe",
+        "price_date": "2018-11-26T14:44:09.209Z",
+        "price_type": "sell",
+        "price_unit_price": 1.56,
+        "id": "5bfc06b912c026d3acb09a40"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f08",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T14:39:31.727Z",
+        "price_type": "sell",
+        "price_unit_price": 1.56,
+        "id": "5bfc05a312c026d3acb098ad"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0d",
+        "price_location": "5bb75803b6551685e87381fe",
+        "price_date": "2018-11-26T14:36:22.058Z",
+        "price_type": "sell",
+        "price_unit_price": 2.85,
+        "id": "5bfc04e612c026d3acb0979d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0f",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-26T14:31:55.859Z",
+        "price_type": "sell",
+        "price_unit_price": 1.02,
+        "id": "5bfc03db12c026d3acb0961d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0d",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T14:27:41.020Z",
+        "price_type": "sell",
+        "price_unit_price": 2.64,
+        "id": "5bfc02dd12c026d3acb094b5"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f01",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T14:22:52.064Z",
+        "price_type": "sell",
+        "price_unit_price": 25.85,
+        "id": "5bfc01bc12c026d3acb0930b"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0a",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-26T14:19:39.406Z",
+        "price_type": "sell",
+        "price_unit_price": 2.63,
+        "id": "5bfc00fb12c026d3acb091f4"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e873821f",
+        "price_date": "2018-11-26T14:18:20.859Z",
+        "price_type": "sell",
+        "price_unit_price": 3.4,
+        "id": "5bfc00ac12c026d3acb09162"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-26T14:16:15.492Z",
+        "price_type": "sell",
+        "price_unit_price": 1.25,
+        "id": "5bfc002f12c026d3acb0909a"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f15",
+        "price_location": "5bb75803b6551685e8738220",
+        "price_date": "2018-11-26T14:13:55.001Z",
+        "price_type": "buy",
+        "price_unit_price": 1.55,
+        "id": "5bfbffa212c026d3acb08fbb"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f17",
+        "price_location": "5bb75803b6551685e873812d",
+        "price_date": "2018-11-20T00:13:47.022Z",
+        "price_type": "buy",
+        "price_unit_price": 7.62,
+        "id": "5bf351bb12c026d3aca4a75a"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0d",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-20T00:01:48.083Z",
+        "price_type": "sell",
+        "price_unit_price": 2.8,
+        "id": "5bf34eec12c026d3aca4a37a"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e87381fb",
+        "price_date": "2018-11-19T23:52:03.146Z",
+        "price_type": "sell",
+        "price_unit_price": 3.4,
+        "id": "5bf34ca312c026d3aca4a051"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0c",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-19T23:40:11.992Z",
+        "price_type": "sell",
+        "price_unit_price": 4.95,
+        "id": "5bf349db12c026d3aca49c88"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f06",
+        "price_location": "5bb75803b6551685e8738133",
+        "price_date": "2018-11-19T23:30:40.063Z",
+        "price_type": "buy",
+        "price_unit_price": 4.07,
+        "id": "5bf347a012c026d3aca4996f"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f1a",
+        "price_location": "5bb75803b6551685e873821f",
+        "price_date": "2018-11-19T23:21:49.122Z",
+        "price_type": "sell",
+        "price_unit_price": 24,
+        "id": "5bf3458d12c026d3aca49681"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e873812d",
+        "price_date": "2018-11-19T23:10:22.019Z",
+        "price_type": "buy",
+        "price_unit_price": 1.16,
+        "id": "5bf342de12c026d3aca492d4"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f1a",
+        "price_location": "5bb75803b6551685e87381fd",
+        "price_date": "2018-11-19T22:58:33.110Z",
+        "price_type": "sell",
+        "price_unit_price": 24,
+        "id": "5bf3401912c026d3aca48f03"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f06",
+        "price_location": "5bb75803b6551685e8738132",
+        "price_date": "2018-11-19T22:48:06.159Z",
+        "price_type": "buy",
+        "price_unit_price": 4.07,
+        "id": "5bf33da612c026d3aca48b9d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0b",
+        "price_location": "5bb75803b6551685e873812b",
+        "price_date": "2018-11-19T22:37:00.181Z",
+        "price_type": "buy",
+        "price_unit_price": 6.4,
+        "id": "5bf33b0c12c026d3aca4880b"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0f",
+        "price_location": "5bb75803b6551685e8738220",
+        "price_date": "2018-11-19T22:25:28.231Z",
+        "price_type": "sell",
+        "price_unit_price": 1.03,
+        "id": "5bf3385812c026d3aca48459"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e873820b",
+        "price_date": "2018-11-19T22:16:14.296Z",
+        "price_type": "buy",
+        "price_unit_price": 3.1,
+        "id": "5bf3362e12c026d3aca48160"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f1a",
+        "price_location": "5bb75803b6551685e8738203",
+        "price_date": "2018-11-19T22:07:46.326Z",
+        "price_type": "sell",
+        "price_unit_price": 24,
+        "id": "5bf3343212c026d3aca47e9d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e873812f",
+        "price_date": "2018-11-19T21:59:16.315Z",
+        "price_type": "buy",
+        "price_unit_price": 1.16,
+        "id": "5bf3323412c026d3aca47be2"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e8738129",
+        "price_date": "2018-11-19T21:48:44.419Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bf32fbc12c026d3aca47878"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f1a",
+        "price_location": "5bb75803b6551685e8738202",
+        "price_date": "2018-11-19T21:39:02.519Z",
+        "price_type": "sell",
+        "price_unit_price": 24,
+        "id": "5bf32d7612c026d3aca47554"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f18",
+        "price_location": "5bb75803b6551685e873812c",
+        "price_date": "2018-11-19T21:28:07.530Z",
+        "price_type": "buy",
+        "price_unit_price": 3.66,
+        "id": "5bf32ae712c026d3aca471c0"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e8738131",
+        "price_date": "2018-11-19T21:18:45.571Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bf328b512c026d3aca46eb4"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0d",
+        "price_location": "5bb75803b6551685e8738131",
+        "price_date": "2018-11-19T21:09:24.723Z",
+        "price_type": "buy",
+        "price_unit_price": 2.5,
+        "id": "5bf3268412c026d3aca46b9f"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e8738203",
+        "price_date": "2018-11-19T21:04:32.023Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bf0323012c026d3aca03e93"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e8738203",
+        "price_date": "2018-11-19T21:04:23.123Z",
+        "price_type": "buy",
+        "price_unit_price": 3.1,
+        "id": "5bf0322412c026d3aca03e7d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f13",
+        "price_location": "5bb75803b6551685e8738203",
+        "price_date": "2018-11-19T21:04:13.989Z",
+        "price_type": "buy",
+        "price_unit_price": 1.34,
+        "id": "5bf0321b12c026d3aca03e71"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0c",
+        "price_location": "5bb75803b6551685e8738203",
+        "price_date": "2018-11-19T21:04:04.061Z",
+        "price_type": "buy",
+        "price_unit_price": 4.65,
+        "id": "5bf0321212c026d3aca03e60"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f13",
+        "price_location": "5bb75803b6551685e873820c",
+        "price_date": "2018-11-19T20:57:45.615Z",
+        "price_type": "sell",
+        "price_unit_price": 1.38,
+        "id": "5bf323c912c026d3aca467b2"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0c",
+        "price_location": "5bb75803b6551685e873820b",
+        "price_date": "2018-11-19T20:47:21.672Z",
+        "price_type": "buy",
+        "price_unit_price": 4.64,
+        "id": "5bf3215912c026d3aca4644e"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f13",
+        "price_location": "5bb75803b6551685e87381fe",
+        "price_date": "2018-11-19T20:37:04.750Z",
+        "price_type": "sell",
+        "price_unit_price": 1.38,
+        "id": "5bf31ef012c026d3aca460f5"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f1a",
+        "price_location": "5bb75803b6551685e8738206",
+        "price_date": "2018-11-19T20:25:47.705Z",
+        "price_type": "sell",
+        "price_unit_price": 24,
+        "id": "5bf31c4b12c026d3aca45d44"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e8738131",
+        "price_date": "2018-11-19T20:17:14.721Z",
+        "price_type": "buy",
+        "price_unit_price": 1.16,
+        "id": "5bf31a4a12c026d3aca45a84"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f13",
+        "price_location": "5bb75803b6551685e873821f",
+        "price_date": "2018-11-19T20:06:04.767Z",
+        "price_type": "sell",
+        "price_unit_price": 1.38,
+        "id": "5bf317ac12c026d3aca456c1"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f10",
+        "price_location": "5bb75803b6551685e87381fe",
+        "price_date": "2018-11-19T19:55:08.835Z",
+        "price_type": "sell",
+        "price_unit_price": 0.44,
+        "id": "5bf3151c12c026d3aca4532d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0b",
+        "price_location": "5bb75803b6551685e8738131",
+        "price_date": "2018-11-19T19:45:49.940Z",
+        "price_type": "buy",
+        "price_unit_price": 6.4,
+        "id": "5bf312ed12c026d3aca45026"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e8738130",
+        "price_date": "2018-11-19T19:37:03.992Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bf310df12c026d3aca44d46"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f11",
+        "price_location": "5bb75803b6551685e873821f",
+        "price_date": "2018-11-19T19:28:04.068Z",
+        "price_type": "buy",
+        "price_unit_price": 27.45,
+        "id": "5bf30ec412c026d3aca44a58"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e873820f",
+        "price_date": "2018-11-19T19:18:03.074Z",
+        "price_type": "buy",
+        "price_unit_price": 0.01,
+        "id": "5bf30c6b12c026d3aca44712"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0b",
+        "price_location": "5bb75803b6551685e8738129",
+        "price_date": "2018-11-19T19:06:20.158Z",
+        "price_type": "buy",
+        "price_unit_price": 6.4,
+        "id": "5bf309ac12c026d3aca44346"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0f",
+        "price_location": "5bb75803b6551685e8738133",
+        "price_date": "2018-11-19T18:56:47.079Z",
+        "price_type": "buy",
+        "price_unit_price": 0.98,
+        "id": "5bf3076f12c026d3aca4401b"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0c",
+        "price_location": "5bb75803b6551685e873820f",
+        "price_date": "2018-11-19T18:46:26.164Z",
+        "price_type": "buy",
+        "price_unit_price": 4.64,
+        "id": "5bf3050212c026d3aca43cb7"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f10",
+        "price_location": "5bb75803b6551685e873820c",
+        "price_date": "2018-11-19T18:35:07.063Z",
+        "price_type": "sell",
+        "price_unit_price": 0.44,
+        "id": "5bf3025b12c026d3aca438f5"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-19T18:15:36.987Z",
+        "price_type": "sell",
+        "price_unit_price": 3.4,
+        "id": "5bf2fdc812c026d3aca4328f"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e8738126",
+        "price_date": "2018-11-19T18:05:07.013Z",
+        "price_type": "buy",
+        "price_unit_price": 1.16,
+        "id": "5bf2fb5312c026d3aca42f13"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f13",
+        "price_location": "5bb75803b6551685e873820f",
+        "price_date": "2018-11-19T17:56:21.792Z",
+        "price_type": "buy",
+        "price_unit_price": 1.31,
+        "id": "5bf2f94512c026d3aca42c38"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0e",
+        "price_location": "5bb75803b6551685e873812f",
+        "price_date": "2018-11-19T17:45:30.865Z",
+        "price_type": "buy",
+        "price_unit_price": 5.62,
+        "id": "5bf2f6ba12c026d3aca4289d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f1a",
+        "price_location": "5bb75803b6551685e873820f",
+        "price_date": "2018-11-19T17:36:45.919Z",
+        "price_type": "sell",
+        "price_unit_price": 24,
+        "id": "5bf2f4ad12c026d3aca425be"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0e",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-19T17:25:23.998Z",
+        "price_type": "sell",
+        "price_unit_price": 6.07,
+        "id": "5bf2f20312c026d3aca42210"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e873812d",
+        "price_date": "2018-11-19T17:16:04.026Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bf2efd412c026d3aca41efd"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e873820b",
+        "price_date": "2018-11-19T17:07:06.999Z",
+        "price_type": "buy",
+        "price_unit_price": 0.01,
+        "id": "5bf2edba12c026d3aca41c13"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f06",
+        "price_location": "5bb75803b6551685e8738220",
+        "price_date": "2018-11-19T16:56:14.093Z",
+        "price_type": "sell",
+        "price_unit_price": 4.27,
+        "id": "5bf2eb2e12c026d3aca41865"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e8738130",
+        "price_date": "2018-11-19T16:44:07.150Z",
+        "price_type": "buy",
+        "price_unit_price": 1.16,
+        "id": "5bf2e85712c026d3aca4143d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f08",
+        "price_location": "5bb75803b6551685e8738130",
+        "price_date": "2018-11-19T16:24:17.074Z",
+        "price_type": "buy",
+        "price_unit_price": 1.43,
+        "id": "5bf2e3b112c026d3aca40dd4"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e8738220",
+        "price_date": "2018-11-19T16:12:47.893Z",
+        "price_type": "sell",
+        "price_unit_price": 3.45,
+        "id": "5bf2e0ff12c026d3aca40a05"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f17",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-19T16:03:59.880Z",
+        "price_type": "sell",
+        "price_unit_price": 8.27,
+        "id": "5bf2deef12c026d3aca40726"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e87381f5",
+        "price_date": "2018-11-19T15:55:10.802Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bf2dcde12c026d3aca4044d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f15",
+        "price_location": "5bb75803b6551685e873812b",
+        "price_date": "2018-11-19T15:43:45.862Z",
+        "price_type": "buy",
+        "price_unit_price": 1.55,
+        "id": "5bf2da3112c026d3aca4008e"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f08",
+        "price_location": "5bb75803b6551685e873820c",
+        "price_date": "2018-11-19T15:32:11.678Z",
+        "price_type": "sell",
+        "price_unit_price": 1.56,
+        "id": "5bf2d77b12c026d3aca3fcce"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f15",
+        "price_location": "5bb75803b6551685e8738131",
+        "price_date": "2018-11-19T15:20:51.730Z",
+        "price_type": "buy",
+        "price_unit_price": 1.55,
+        "id": "5bf2d4d312c026d3aca3f6dd"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0d",
+        "price_location": "5bb75803b6551685e8738130",
+        "price_date": "2018-11-19T15:03:59.865Z",
+        "price_type": "buy",
+        "price_unit_price": 2.5,
+        "id": "5bf2d0df12c026d3aca3ee2a"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f08",
+        "price_location": "5bb75803b6551685e87381fb",
+        "price_date": "2018-11-19T14:48:17.831Z",
+        "price_type": "sell",
+        "price_unit_price": 1.66,
+        "id": "5bf2cd3112c026d3aca3e60f"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e873821f",
+        "price_date": "2018-11-19T14:32:54.768Z",
+        "price_type": "buy",
+        "price_unit_price": 1.18,
+        "id": "5bf2c99612c026d3aca3df3d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f13",
+        "price_location": "5bb75803b6551685e873820b",
+        "price_date": "2018-11-19T14:27:04.586Z",
+        "price_type": "buy",
+        "price_unit_price": 1.31,
+        "id": "5bf2c83812c026d3aca3dcbf"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f17",
+        "price_location": "5bb75803b6551685e873812c",
+        "price_date": "2018-11-19T14:08:51.596Z",
+        "price_type": "buy",
+        "price_unit_price": 7.62,
+        "id": "5bf2c3f312c026d3aca3d525"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e873812a",
+        "price_date": "2018-11-19T14:04:28.264Z",
+        "price_type": "buy",
+        "price_unit_price": 1.16,
+        "id": "5bf2c2ec12c026d3aca3d3a8"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0a",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-19T14:03:08.932Z",
+        "price_type": "sell",
+        "price_unit_price": 2.53,
+        "id": "5bf2c29c12c026d3aca3d32a"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f1a",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-19T13:49:54.444Z",
+        "price_type": "sell",
+        "price_unit_price": 24,
+        "id": "5bf2bf2f12c026d3aca3ce5d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f1a",
+        "price_location": "5bb75803b6551685e8738220",
+        "price_date": "2018-11-19T13:43:37.412Z",
+        "price_type": "sell",
+        "price_unit_price": 24.54,
+        "id": "5bf2be0912c026d3aca3ccbb"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f1a",
+        "price_location": "5bb75803b6551685e87381f7",
+        "price_date": "2018-11-19T13:42:27.157Z",
+        "price_type": "sell",
+        "price_unit_price": 24,
+        "id": "5bf2a34612c026d3aca3a79f"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f1a",
+        "price_location": "5bb75803b6551685e87381fb",
+        "price_date": "2018-11-19T12:34:09.768Z",
+        "price_type": "buy",
+        "price_unit_price": 14.54,
+        "id": "5bf2adc112c026d3aca3b62d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f10",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-18T19:53:53.965Z",
+        "price_type": "sell",
+        "price_unit_price": 0.41,
+        "id": "5bef882a12c026d3ac9f5088"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0f",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-18T19:53:35.226Z",
+        "price_type": "sell",
+        "price_unit_price": 1.02,
+        "id": "5bef881a12c026d3ac9f506c"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0d",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-18T19:53:22.608Z",
+        "price_type": "sell",
+        "price_unit_price": 2.8,
+        "id": "5bef87f012c026d3ac9f5025"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f08",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-18T19:53:10.917Z",
+        "price_type": "sell",
+        "price_unit_price": 1.57,
+        "id": "5bef87b312c026d3ac9f4fb7"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-18T19:52:51.756Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bef877a12c026d3ac9f4f4e"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f12",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-18T19:52:40.309Z",
+        "price_type": "buy",
+        "price_unit_price": 17.01,
+        "id": "5bef876e12c026d3ac9f4f3b"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e87381fa",
+        "price_date": "2018-11-18T19:26:53.593Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bf067d512c026d3aca08ba7"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f10",
+        "price_location": "5bb75803b6551685e87381fa",
+        "price_date": "2018-11-18T19:26:40.388Z",
+        "price_type": "buy",
+        "price_unit_price": 0.34,
+        "id": "5bf067cd12c026d3aca08b9b"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0f",
+        "price_location": "5bb75803b6551685e87381fa",
+        "price_date": "2018-11-18T19:26:13.594Z",
+        "price_type": "buy",
+        "price_unit_price": 0.97,
+        "id": "5bf067c312c026d3aca08b8a"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0d",
+        "price_location": "5bb75803b6551685e87381fa",
+        "price_date": "2018-11-18T19:26:04.676Z",
+        "price_type": "buy",
+        "price_unit_price": 2.62,
+        "id": "5bf067ba12c026d3aca08b79"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f08",
+        "price_location": "5bb75803b6551685e87381fa",
+        "price_date": "2018-11-18T19:25:55.155Z",
+        "price_type": "buy",
+        "price_unit_price": 1.44,
+        "id": "5bf067b012c026d3aca08b68"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f12",
+        "price_location": "5bb75803b6551685e87381fd",
+        "price_date": "2018-11-18T19:16:46.889Z",
+        "price_type": "sell",
+        "price_unit_price": 18.05,
+        "id": "5bf069b712c026d3aca08e54"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e87381fd",
+        "price_date": "2018-11-18T19:16:29.397Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bf06a4612c026d3aca08f69"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f10",
+        "price_location": "5bb75803b6551685e87381fd",
+        "price_date": "2018-11-18T19:16:17.806Z",
+        "price_type": "buy",
+        "price_unit_price": 0.34,
+        "id": "5bf06a3d12c026d3aca08f4f"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0f",
+        "price_location": "5bb75803b6551685e87381fd",
+        "price_date": "2018-11-18T19:16:07.998Z",
+        "price_type": "buy",
+        "price_unit_price": 0.96,
+        "id": "5bf06a2e12c026d3aca08f3b"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0d",
+        "price_location": "5bb75803b6551685e87381fd",
+        "price_date": "2018-11-18T19:15:59.556Z",
+        "price_type": "buy",
+        "price_unit_price": 2.62,
+        "id": "5bf06a2312c026d3aca08f27"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f08",
+        "price_location": "5bb75803b6551685e87381fd",
+        "price_date": "2018-11-18T19:15:51.348Z",
+        "price_type": "buy",
+        "price_unit_price": 1.44,
+        "id": "5bf06a1712c026d3aca08f15"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e87381fe",
+        "price_date": "2018-11-18T19:08:45.719Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bf1b8bd12c026d3aca262a2"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f12",
+        "price_location": "5bb75803b6551685e87381fe",
+        "price_date": "2018-11-18T19:08:33.263Z",
+        "price_type": "buy",
+        "price_unit_price": 17,
+        "id": "5bf1b8b112c026d3aca2628e"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f02",
+        "price_location": "5bb75803b6551685e87381fe",
+        "price_date": "2018-11-18T19:08:24.031Z",
+        "price_type": "buy",
+        "price_unit_price": 1.14,
+        "id": "5bf1b8a812c026d3aca2627d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e87381fd",
+        "price_date": "2018-11-17T19:19:46.108Z",
+        "price_type": "sell",
+        "price_unit_price": 3.4,
+        "id": "5bf069d212c026d3aca08e8a"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f13",
+        "price_location": "5bb75803b6551685e87381fd",
+        "price_date": "2018-11-17T19:19:30.911Z",
+        "price_type": "sell",
+        "price_unit_price": 1.36,
+        "id": "5bf069c212c026d3aca08e67"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0c",
+        "price_location": "5bb75803b6551685e87381fd",
+        "price_date": "2018-11-17T19:19:07.325Z",
+        "price_type": "sell",
+        "price_unit_price": 4.95,
+        "id": "5bf069ab12c026d3aca08e3e"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e87381fa",
+        "price_date": "2018-11-17T19:10:22.824Z",
+        "price_type": "sell",
+        "price_unit_price": 3.4,
+        "id": "5bf0679e12c026d3aca08b42"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f13",
+        "price_location": "5bb75803b6551685e87381fa",
+        "price_date": "2018-11-17T19:10:13.516Z",
+        "price_type": "sell",
+        "price_unit_price": 1.36,
+        "id": "5bf0679512c026d3aca08b31"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f12",
+        "price_location": "5bb75803b6551685e87381fa",
+        "price_date": "2018-11-17T19:10:04.648Z",
+        "price_type": "sell",
+        "price_unit_price": 18.05,
+        "id": "5bf0678c12c026d3aca08b20"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0c",
+        "price_location": "5bb75803b6551685e87381fa",
+        "price_date": "2018-11-17T19:09:54.317Z",
+        "price_type": "sell",
+        "price_unit_price": 4.95,
+        "id": "5bf0678212c026d3aca08b0d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f13",
+        "price_location": "5bb75803b6551685e8738202",
+        "price_date": "2018-11-17T17:52:05.482Z",
+        "price_type": "sell",
+        "price_unit_price": 1.37,
+        "id": "5bf0358b12c026d3aca0437b"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f18",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-17T16:19:34.596Z",
+        "price_type": "sell",
+        "price_unit_price": 3.9,
+        "id": "5bef88a012c026d3ac9f5154"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-17T16:19:19.563Z",
+        "price_type": "sell",
+        "price_unit_price": 3.4,
+        "id": "5bef887912c026d3ac9f510f"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f14",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-17T16:19:01.485Z",
+        "price_type": "sell",
+        "price_unit_price": 1.44,
+        "id": "5bef886612c026d3ac9f50f0"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f13",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-17T16:18:49.784Z",
+        "price_type": "sell",
+        "price_unit_price": 1.38,
+        "id": "5bef885912c026d3ac9f50dc"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0e",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-17T16:17:08.814Z",
+        "price_type": "sell",
+        "price_unit_price": 6.07,
+        "id": "5bef880e12c026d3ac9f504f"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0c",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-17T16:16:41.062Z",
+        "price_type": "sell",
+        "price_unit_price": 4.95,
+        "id": "5bef87e012c026d3ac9f500e"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0a",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-17T16:15:57.188Z",
+        "price_type": "sell",
+        "price_unit_price": 2.53,
+        "id": "5bef87c612c026d3ac9f4fd5"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f06",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-17T16:15:35.560Z",
+        "price_type": "sell",
+        "price_unit_price": 4.26,
+        "id": "5bef87a712c026d3ac9f4fa4"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-17T16:15:22.497Z",
+        "price_type": "sell",
+        "price_unit_price": 1.25,
+        "id": "5bef879b12c026d3ac9f4f82"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f01",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-17T16:15:08.598Z",
+        "price_type": "sell",
+        "price_unit_price": 25.6,
+        "id": "5bef878f12c026d3ac9f4f6d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e8738206",
+        "price_date": "2018-11-17T16:01:08.507Z",
+        "price_type": "sell",
+        "price_unit_price": 3.4,
+        "id": "5bef8b0f12c026d3ac9f54f6"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f13",
+        "price_location": "5bb75803b6551685e8738206",
+        "price_date": "2018-11-17T16:00:55.589Z",
+        "price_type": "sell",
+        "price_unit_price": 1.36,
+        "id": "5bef8b0212c026d3ac9f54e0"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0c",
+        "price_location": "5bb75803b6551685e8738206",
+        "price_date": "2018-11-17T16:00:43.829Z",
+        "price_type": "sell",
+        "price_unit_price": 4.95,
+        "id": "5bef8ae312c026d3ac9f54a5"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e8738206",
+        "price_date": "2018-11-17T16:00:20.938Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bef8ac812c026d3ac9f5480"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f18",
+        "price_location": "5bb75803b6551685e8738206",
+        "price_date": "2018-11-17T16:00:05.764Z",
+        "price_type": "buy",
+        "price_unit_price": 3.72,
+        "id": "5bef8aba12c026d3ac9f5467"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f14",
+        "price_location": "5bb75803b6551685e8738206",
+        "price_date": "2018-11-17T15:59:48.208Z",
+        "price_type": "buy",
+        "price_unit_price": 1.36,
+        "id": "5bef8aad12c026d3ac9f5449"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0e",
+        "price_location": "5bb75803b6551685e8738206",
+        "price_date": "2018-11-17T15:59:35.304Z",
+        "price_type": "buy",
+        "price_unit_price": 5.72,
+        "id": "5bef8a9a12c026d3ac9f542c"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0a",
+        "price_location": "5bb75803b6551685e8738206",
+        "price_date": "2018-11-17T15:59:24.051Z",
+        "price_type": "buy",
+        "price_unit_price": 2.4,
+        "id": "5bef8a8d12c026d3ac9f5418"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f06",
+        "price_location": "5bb75803b6551685e8738206",
+        "price_date": "2018-11-17T15:59:13.105Z",
+        "price_type": "buy",
+        "price_unit_price": 4.21,
+        "id": "5bef8a8312c026d3ac9f5407"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e8738221",
+        "price_date": "2018-11-17T15:49:19.522Z",
+        "price_type": "sell",
+        "price_unit_price": 3.4,
+        "id": "5bf0387f12c026d3aca047d7"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f13",
+        "price_location": "5bb75803b6551685e8738221",
+        "price_date": "2018-11-17T15:49:08.837Z",
+        "price_type": "sell",
+        "price_unit_price": 1.36,
+        "id": "5bf0387412c026d3aca047c2"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0c",
+        "price_location": "5bb75803b6551685e8738221",
+        "price_date": "2018-11-17T15:48:53.202Z",
+        "price_type": "sell",
+        "price_unit_price": 4.95,
+        "id": "5bf0386512c026d3aca047a8"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e8738221",
+        "price_date": "2018-11-17T15:48:29.207Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bf0384d12c026d3aca0477f"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f18",
+        "price_location": "5bb75803b6551685e8738221",
+        "price_date": "2018-11-17T15:48:17.190Z",
+        "price_type": "buy",
+        "price_unit_price": 3.72,
+        "id": "5bf0384112c026d3aca0476b"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f14",
+        "price_location": "5bb75803b6551685e8738221",
+        "price_date": "2018-11-17T15:47:51.854Z",
+        "price_type": "buy",
+        "price_unit_price": 1.33,
+        "id": "5bf0382712c026d3aca04745"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0e",
+        "price_location": "5bb75803b6551685e8738221",
+        "price_date": "2018-11-17T15:47:36.110Z",
+        "price_type": "buy",
+        "price_unit_price": 5.72,
+        "id": "5bf0381812c026d3aca04724"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f06",
+        "price_location": "5bb75803b6551685e8738221",
+        "price_date": "2018-11-17T15:47:22.211Z",
+        "price_type": "buy",
+        "price_unit_price": 4.19,
+        "id": "5bf0380a12c026d3aca0470e"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f01",
+        "price_location": "5bb75803b6551685e8738221",
+        "price_date": "2018-11-17T15:47:11.117Z",
+        "price_type": "buy",
+        "price_unit_price": 24.45,
+        "id": "5bf037ff12c026d3aca046fb"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e8738202",
+        "price_date": "2018-11-17T15:36:53.040Z",
+        "price_type": "sell",
+        "price_unit_price": 3.4,
+        "id": "5bf0359512c026d3aca0438c"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0c",
+        "price_location": "5bb75803b6551685e8738202",
+        "price_date": "2018-11-17T15:36:28.774Z",
+        "price_type": "sell",
+        "price_unit_price": 4.95,
+        "id": "5bf0357c12c026d3aca0435b"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e8738202",
+        "price_date": "2018-11-17T15:36:09.684Z",
+        "price_type": "buy",
+        "price_unit_price": 0.005,
+        "id": "5bf0356912c026d3aca0433e"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f18",
+        "price_location": "5bb75803b6551685e8738202",
+        "price_date": "2018-11-17T15:35:48.926Z",
+        "price_type": "buy",
+        "price_unit_price": 3.72,
+        "id": "5bf0355412c026d3aca0431f"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f14",
+        "price_location": "5bb75803b6551685e8738202",
+        "price_date": "2018-11-17T15:35:35.438Z",
+        "price_type": "buy",
+        "price_unit_price": 1.34,
+        "id": "5bf0354712c026d3aca042fc"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0a",
+        "price_location": "5bb75803b6551685e8738202",
+        "price_date": "2018-11-17T15:35:24.114Z",
+        "price_type": "buy",
+        "price_unit_price": 2.4,
+        "id": "5bf0353c12c026d3aca042eb"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f06",
+        "price_location": "5bb75803b6551685e8738202",
+        "price_date": "2018-11-17T15:35:13.525Z",
+        "price_type": "buy",
+        "price_unit_price": 4.2,
+        "id": "5bf0353112c026d3aca042da"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f01",
+        "price_location": "5bb75803b6551685e8738202",
+        "price_date": "2018-11-17T15:35:03.819Z",
+        "price_type": "buy",
+        "price_unit_price": 24.45,
+        "id": "5bf0352712c026d3aca042c9"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f02",
+        "price_location": "5bb75803b6551685e8738203",
+        "price_date": "2018-11-17T15:23:10.943Z",
+        "price_type": "sell",
+        "price_unit_price": 1.12,
+        "id": "5bf0325e12c026d3aca03edc"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f19",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_type": "buy",
+        "price_date": "2018-11-17T14:40:23.004Z",
+        "price_unit_price": 0.005,
+        "id": "5bef824e12c026d3ac9f4732"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f14",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T14:40:09.430Z",
+        "price_type": "buy",
+        "price_unit_price": 1.36,
+        "id": "5bef845212c026d3ac9f4a5f"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f10",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T14:39:56.991Z",
+        "price_type": "buy",
+        "price_unit_price": 0.38,
+        "id": "5bef843a12c026d3ac9f4a3c"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0f",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T14:39:42.019Z",
+        "price_type": "buy",
+        "price_unit_price": 0.98,
+        "id": "5bef842c12c026d3ac9f4a26"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f04",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_type": "buy",
+        "price_date": "2018-11-17T14:39:31.299Z",
+        "price_unit_price": 1.2,
+        "id": "5bef823c12c026d3ac9f470c"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f02",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T14:39:22.581Z",
+        "price_type": "buy",
+        "price_unit_price": 1.11,
+        "id": "5bef840812c026d3ac9f49e6"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f12",
+        "price_location": "5bb75803b6551685e8738206",
+        "price_date": "2018-11-17T03:28:55.415Z",
+        "price_type": "sell",
+        "price_unit_price": 18.03,
+        "id": "5bef8af712c026d3ac9f54ce"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f17",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-17T03:18:38.240Z",
+        "price_type": "sell",
+        "price_unit_price": 8.27,
+        "id": "5bef888e12c026d3ac9f512d"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f11",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-17T03:17:12.699Z",
+        "price_type": "sell",
+        "price_unit_price": 28.27,
+        "id": "5bef883812c026d3ac9f50a0"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0b",
+        "price_location": "5bb75803b6551685e87381f6",
+        "price_date": "2018-11-17T03:15:30.910Z",
+        "price_type": "sell",
+        "price_unit_price": 6.9,
+        "id": "5bef87d212c026d3ac9f4fea"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f18",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T03:04:44.703Z",
+        "price_type": "sell",
+        "price_unit_price": 3.9,
+        "id": "5bef854c12c026d3ac9f4c2a"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f17",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T03:04:31.686Z",
+        "price_type": "sell",
+        "price_unit_price": 8.27,
+        "id": "5bef853f12c026d3ac9f4c09"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f16",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T03:04:12.316Z",
+        "price_type": "sell",
+        "price_unit_price": 3.4,
+        "id": "5bef852c12c026d3ac9f4beb"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f13",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T03:03:57.185Z",
+        "price_type": "sell",
+        "price_unit_price": 1.38,
+        "id": "5bef851d12c026d3ac9f4bd1"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f12",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T03:03:42.276Z",
+        "price_type": "sell",
+        "price_unit_price": 18,
+        "id": "5bef850e12c026d3ac9f4bb6"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f11",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T03:03:24.173Z",
+        "price_type": "sell",
+        "price_unit_price": 28.45,
+        "id": "5bef84fc12c026d3ac9f4b90"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0e",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T03:03:12.665Z",
+        "price_type": "sell",
+        "price_unit_price": 6.07,
+        "id": "5bef84f012c026d3ac9f4b7a"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0d",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T03:02:59.679Z",
+        "price_type": "sell",
+        "price_unit_price": 2.8,
+        "id": "5bef84e312c026d3ac9f4b65"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0c",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T03:02:40.587Z",
+        "price_type": "sell",
+        "price_unit_price": 4.95,
+        "id": "5bef84d012c026d3ac9f4b3b"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0b",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T03:02:29.345Z",
+        "price_type": "sell",
+        "price_unit_price": 6.9,
+        "id": "5bef84c512c026d3ac9f4b28"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f0a",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T03:02:16.437Z",
+        "price_type": "sell",
+        "price_unit_price": 2.53,
+        "id": "5bef84b812c026d3ac9f4b0e"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f08",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T03:01:43.682Z",
+        "price_type": "sell",
+        "price_unit_price": 1.56,
+        "id": "5bef849712c026d3ac9f4adf"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f06",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T03:01:30.457Z",
+        "price_type": "sell",
+        "price_unit_price": 4.26,
+        "id": "5bef848a12c026d3ac9f4ac0"
+    },
+    {
+        "price_commodity": "5bb6a7f7574bd8753cce3f01",
+        "price_location": "5bb75803b6551685e87381f4",
+        "price_date": "2018-11-17T03:01:17.080Z",
+        "price_type": "sell",
+        "price_unit_price": 25.6,
+        "id": "5bef847d12c026d3ac9f4aa8"
+    }
+]

@@ -1,0 +1,87 @@
+[
+    {
+        "resource_name": "Agricium",
+        "resource_type": "mineral",
+        "id": "5bb77e47298e4f8ac549fc30"
+    },
+    {
+        "resource_name": "Aluminum",
+        "resource_type": "metal",
+        "id": "5bb77e47298e4f8ac549fc31"
+    },
+    {
+        "resource_name": "Astatine",
+        "resource_type": "mineral",
+        "id": "5bb77e47298e4f8ac549fc32"
+    },
+    {
+        "resource_name": "Beryl",
+        "resource_type": "mineral",
+        "id": "5bb77e47298e4f8ac549fc33"
+    },
+    {
+        "resource_name": "Borase",
+        "resource_type": "mineral",
+        "id": "5bb77e47298e4f8ac549fc34"
+    },
+    {
+        "resource_name": "Chlorine",
+        "resource_type": "gas",
+        "id": "5bb77e47298e4f8ac549fc35"
+    },
+    {
+        "resource_name": "Copper",
+        "resource_type": "metal",
+        "id": "5bb77e47298e4f8ac549fc36"
+    },
+    {
+        "resource_name": "Corundum",
+        "resource_type": "mineral",
+        "id": "5bb77e47298e4f8ac549fc37"
+    },
+    {
+        "resource_name": "Diamond",
+        "resource_type": "mineral",
+        "id": "5bb77e47298e4f8ac549fc38"
+    },
+    {
+        "resource_name": "Fluorine",
+        "resource_type": "gas",
+        "id": "5bb77e47298e4f8ac549fc39"
+    },
+    {
+        "resource_name": "Gold",
+        "resource_type": "metal",
+        "id": "5bb77e47298e4f8ac549fc3a"
+    },
+    {
+        "resource_name": "Hydrogen",
+        "resource_type": "gas",
+        "id": "5bb77e47298e4f8ac549fc3b"
+    },
+    {
+        "resource_name": "Iodine",
+        "resource_type": "liquid",
+        "id": "5bb77e47298e4f8ac549fc3c"
+    },
+    {
+        "resource_name": "Laranite",
+        "resource_type": "mineral",
+        "id": "5bb77e47298e4f8ac549fc3d"
+    },
+    {
+        "resource_name": "Quartz",
+        "resource_type": "mineral",
+        "id": "5bb77e47298e4f8ac549fc3e"
+    },
+    {
+        "resource_name": "Titanium",
+        "resource_type": "metal",
+        "id": "5bb77e47298e4f8ac549fc3f"
+    },
+    {
+        "resource_name": "Tungsten",
+        "resource_type": "metal",
+        "id": "5bb77e47298e4f8ac549fc40"
+    }
+]

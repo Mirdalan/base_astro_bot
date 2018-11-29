@@ -119,5 +119,6 @@ def save_to_temp_json(structure, file_name="temp"):
 
 if __name__ == '__main__':
     cli = TradeClient()
-    save_to_temp_json(cli.get_containers(), "containers")
-    save_to_temp_json(cli.get_locations(), "locations")
+    save_to_temp_json(cli.get_prices(), "trade_prices")
+    # cli = MiningClient()
+    # save_to_temp_json(cli.get_resources(), "mining_resources")

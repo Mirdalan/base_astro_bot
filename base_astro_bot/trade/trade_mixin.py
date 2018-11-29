@@ -39,6 +39,9 @@ class TradeMixin(BaseMixinClass, ABC):
             return table_string
         return self.format_table(commodity_name, routes_table[:-1])
 
+    def get_mining_messages(self, resource):
+        return self.print_dict_table(self.trade.get_mining_prices(resource))
+
     def update_trade_data(self):
         if self.trade.update_data():
             return self.messages.success

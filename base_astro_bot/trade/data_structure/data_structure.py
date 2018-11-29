@@ -12,6 +12,10 @@ def choose_item_class(items):
         return trade_classes.Commodity
     elif "price_commodity" in item_keys:
         return trade_classes.CommodityPrice
+    elif "resource_name" in item_keys:
+        return trade_classes.Resource
+    elif "price_resource" in item_keys:
+        return trade_classes.ResourcePrice
 
 
 class DataStructure(dict):

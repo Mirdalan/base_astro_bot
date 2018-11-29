@@ -2,32 +2,36 @@ from pymongo import MongoClient
 
 from base_astro_bot.utils import MyLogger
 from base_astro_bot.trade.data_structure import DataStructure
-from base_astro_bot.trade.data_rat_client import TradeClient
+from base_astro_bot.trade.data_rat_client import TradeClient, MiningClient
 
 
 class PricesStructure:
 
-    def __init__(self, log_file="trade_assistant.log", mongo_client=None):
+    def __init__(self, log_file="trade_assistant.log", mongo_client=None,
+                 trade_data_client=TradeClient, mining_data_client=MiningClient):
         self._log_file = log_file
         self.logger = MyLogger(log_file_name=self._log_file, logger_name="Trade Assistant logger", prefix="[TRADE]")
-        self.data_rat = TradeClient()
-        self.mongo_db = self._get_existing_or_new_mongo_client(mongo_client)
+        self.trade_data_client = trade_data_client()
+        self.mining_data_client = mining_data_client()
+        self.mongo_db = mongo_client   # type: MongoClient
         self.celestial_bodies = None   # type: DataStructure
         self.locations = None   # type: DataStructure
         self.commodities = None   # type: DataStructure
-        self.prices = None   # type: DataStructure
+        self.commodity_prices = None   # type: DataStructure
+        self.resources = None   # type: DataStructure
+        self.resource_prices = None   # type: DataStructure
         self.update_data()
 
-    @staticmethod
-    def _get_existing_or_new_mongo_client(mongo_client):
-        return mongo_client if mongo_client else MongoClient()
-
     def _update_data_structure(self):
-        self.celestial_bodies = DataStructure(self.data_rat.get_containers())
-        self.locations = DataStructure(self.data_rat.get_locations(), parents=self.celestial_bodies)
-        self.prices = DataStructure(self.data_rat.get_prices(), locations=self.locations)
-        self.commodities = DataStructure(self.data_rat.get_commodities(), prices=self.prices)
-        return all((self.celestial_bodies, self.locations, self.commodities, self.prices))
+        self.celestial_bodies = DataStructure(self.trade_data_client.get_containers())
+        self.locations = DataStructure(self.trade_data_client.get_locations(), parents=self.celestial_bodies)
+        self.commodity_prices = DataStructure(self.trade_data_client.get_prices(), locations=self.locations)
+        self.commodities = DataStructure(self.trade_data_client.get_commodities(), prices=self.commodity_prices)
+        self.resource_prices = DataStructure(self.mining_data_client.get_prices(), locations=self.locations)
+        self.resources = DataStructure(self.mining_data_client.get_resources(), prices=self.resource_prices)
+        return all((self.celestial_bodies, self.locations,
+                    self.commodities, self.commodity_prices,
+                    self.resources, self.resource_prices))
 
     def _save_cache(self, database_name, **kwargs):
         database = self.mongo_db.get_database(database_name)
@@ -40,21 +44,29 @@ class PricesStructure:
         self.celestial_bodies = DataStructure([doc for doc in self.mongo_db.places.celestial_bodies.find()])
         self.locations = DataStructure([doc for doc in self.mongo_db.places.locations.find()],
                                        parents=self.celestial_bodies)
-        self.prices = DataStructure([doc for doc in self.mongo_db.trade.prices.find()],
-                                    locations=self.locations)
+        self.commodity_prices = DataStructure([doc for doc in self.mongo_db.trade.prices.find()],
+                                              locations=self.locations)
         self.commodities = DataStructure([doc for doc in self.mongo_db.trade.commodities.find()],
-                                         prices=self.prices)
+                                         prices=self.commodity_prices)
+        self.resource_prices = DataStructure([doc for doc in self.mongo_db.mining.prices.find()],
+                                             locations=self.locations)
+        self.resources = DataStructure([doc for doc in self.mongo_db.mining.resources.find()],
+                                       prices=self.resource_prices)
 
     def update_data(self):
         if self._update_data_structure():
-            self._save_cache("places",
-                             celestial_bodies=self.celestial_bodies.get_list(),
-                             locations=self.locations.get_list())
-            self._save_cache("trade",
-                             commodities=self.commodities.get_list(),
-                             prices=self.prices.get_list())
+            if self.mongo_db:
+                self._save_cache("places",
+                                 celestial_bodies=self.celestial_bodies.get_list(),
+                                 locations=self.locations.get_list())
+                self._save_cache("trade",
+                                 commodities=self.commodities.get_list(),
+                                 prices=self.commodity_prices.get_list())
+                self._save_cache("mining",
+                                 resources=self.resources.get_list(),
+                                 prices=self.resource_prices.get_list())
             return True
-        else:
+        elif self.mongo_db:
             self._read_from_cache()
 
 
@@ -72,6 +84,21 @@ class TradeAssistant(PricesStructure):
             all_routes.sort(key=lambda item: item.get('best_income'), reverse=True)
 
             return [(route['commodity_name'], route['table']) for route in all_routes[:max_commodities]]
+
+    def get_mining_prices(self, resource_name=None):
+        if resource_name:
+            resource = self.resources.match_exact_name(resource_name)
+            if resource:
+                return resource.get_prices_table()
+        else:
+            return [
+                {
+                    "Resource": resource.name,
+                    "aUEC/unit": "%.3f" % resource.best_sell,
+                    "Locations": "\n".join(resource.best_sell_locations)
+                }
+                for resource in self.resources.values() if resource.best_sell
+            ]
 
 
 if __name__ == '__main__':

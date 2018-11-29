@@ -22,7 +22,8 @@ class TradeTests(unittest.TestCase):
         routes = self.trade.get_trade_routes()
         self.assertIsInstance(routes, list)
         for route in routes:
-            self.assertEqual(route[1][0][0], 'invested money')
+            self.assertIn('invested money', [row[0] for row in route[1]])
+            self.assertIn('income', [row[0] for row in route[1]])
 
     def test_mining(self):
         prices = self.trade.get_mining_prices()

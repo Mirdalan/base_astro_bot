@@ -3,6 +3,7 @@
 database.sqlite
 logs/
 google*.json
+*/temp.*
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template

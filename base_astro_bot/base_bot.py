@@ -4,6 +4,7 @@ import time
 from tabulate import tabulate
 from pymongo import MongoClient
 import pafy
+from requests.exceptions import RequestException
 
 from .utils import MyLogger
 from .database import DatabaseManager
@@ -115,8 +116,12 @@ class BaseBot(RsiMixin, TradeMixin, FleetMixin):
 
     def monitoring_procedure(self):
         while True:
-            self.monitor_current_releases()
-            self.monitor_forum_threads()
-            self.monitor_youtube_channel()
-            self.report_ship_price()
+            try:
+                self.monitor_current_releases()
+                self.monitor_forum_threads()
+                self.monitor_youtube_channel()
+                self.report_ship_price()
+            except RequestException:
+                self.logger.warning("Network connection error. Sleeping a bit longer.")
+                time.sleep(1200)
             time.sleep(300)

@@ -9,7 +9,7 @@ with open("README.md") as f:
 
 setup(
     name='base_astro_bot',
-    version='1.1.6',
+    version='1.1.7',
     description='Base bot class for Star Citizen players',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -39,6 +39,7 @@ setup(
         ]
     },
     packages=find_packages(exclude=('tests',)),
+    package_data={'rsi_data': ['loaners.json']},
     include_package_data=True,
     python_requires='~=3.5',
 )

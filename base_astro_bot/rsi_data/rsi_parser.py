@@ -1,5 +1,4 @@
 import json
-import os
 from threading import Thread
 from time import sleep
 
@@ -9,6 +8,7 @@ import settings
 from ..utils import MyLogger
 from ..database import DatabaseManager
 from .road_map import RoadMap
+from .loaners import LOANER_SHIPS
 
 
 class RsiDataParser:
@@ -33,13 +33,7 @@ class RsiDataParser:
             self.auto_update_thread.start()
 
         self.road_map = RoadMap(log_file=log_file, database_manager=database_manager)
-        self._loaners = self._get_ships_loaners()
-
-    @staticmethod
-    def _get_ships_loaners():
-        local_dir = os.path.realpath(os.path.dirname(__file__))
-        with open(os.path.join(local_dir, "loaners.json")) as loaners_file:
-            return json.loads(loaners_file.read())
+        self._loaners = LOANER_SHIPS
 
     def _find_loaners(self, ship_query):
         for ship_name in self._loaners.keys():
@@ -101,9 +95,6 @@ class RsiDataParser:
             self.database.save_rsi_data(self.ships)
         else:
             self.ships = self.database.get_rsi_data()
-
-        with open("temp.json", 'w') as f:
-            f.write(json.dumps(self.ships, indent=4))
 
     def update_ships_prices(self):
         prices = self.get_ships_prices()

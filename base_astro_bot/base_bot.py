@@ -39,7 +39,7 @@ class BaseBot(RsiMixin, TradeMixin, FleetMixin):
 
         self.trade = TradeAssistant(log_file=settings.LOG_FILE, mongo_client=self.mongo)
 
-        self.help_message = self._get_help_message()
+        self.help_messages = self._get_help_message()
 
     def _get_channel_instance(self, channel_id):
         raise NotImplementedError
@@ -65,12 +65,12 @@ class BaseBot(RsiMixin, TradeMixin, FleetMixin):
             return ""
 
     @staticmethod
-    def print_dict_table(items, table_format="presto"):
-        return "```%s```" % tabulate(items, headers='keys', tablefmt=table_format)
+    def print_dict_table(items, table_format="presto", **kwargs):
+        return "```%s```" % tabulate(items, headers='keys', tablefmt=table_format, **kwargs)
 
     @staticmethod
-    def print_list_table(items, table_format="presto"):
-        return "```%s```" % tabulate(items, tablefmt=table_format)
+    def print_list_table(items, table_format="presto", **kwargs):
+        return "```%s```" % tabulate(items, tablefmt=table_format, **kwargs)
 
     def split_data_and_get_messages(self, items, get_message_function, *args, **kwargs):
         message = get_message_function(items, *args, **kwargs)

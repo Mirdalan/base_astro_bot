@@ -8,14 +8,7 @@ from .road_map_mixin import RoadMapMixin
 class RsiMixin(RoadMapMixin, ABC):
 
     def get_ship_data_from_name(self, ship_name):
-        ship_data = self.rsi_data.get_ship(ship_name)
-        if ship_data is None:
-            found_ships = self.rsi_data.get_ships_by_query(ship_name)
-            if len(found_ships) == 1:
-                ship_data = found_ships[0]
-            else:
-                ship_data = found_ships
-        return ship_data
+        return self.rsi_data.get_ship_data_from_name(ship_name)
 
     @staticmethod
     def get_ship_price_message(ship):

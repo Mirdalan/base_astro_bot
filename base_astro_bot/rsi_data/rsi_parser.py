@@ -1,4 +1,5 @@
 import json
+import os
 from threading import Thread
 from time import sleep
 
@@ -32,6 +33,27 @@ class RsiDataParser:
             self.auto_update_thread.start()
 
         self.road_map = RoadMap(log_file=log_file, database_manager=database_manager)
+        self._loaners = self._get_ships_loaners()
+
+    @staticmethod
+    def _get_ships_loaners():
+        local_dir = os.path.realpath(os.path.dirname(__file__))
+        with open(os.path.join(local_dir, "loaners.json")) as loaners_file:
+            return json.loads(loaners_file.read())
+
+    def _find_loaners(self, ship_query):
+        for ship_name in self._loaners.keys():
+            if ship_query in ship_name.lower():
+                return self._loaners[ship_name]
+        return []
+
+    def get_loaners(self, ship_name):
+        return self._loaners.get(ship_name, self._find_loaners(ship_name.lower()))
+
+    def is_flight_ready(self, ship_name):
+        ship = self.get_ship_data_from_name(ship_name)
+        if isinstance(ship, dict):
+            return ship['production_status'] == "flight-ready"
 
     def try_to_request_get(self, url):
         try:
@@ -80,6 +102,9 @@ class RsiDataParser:
         else:
             self.ships = self.database.get_rsi_data()
 
+        with open("temp.json", 'w') as f:
+            f.write(json.dumps(self.ships, indent=4))
+
     def update_ships_prices(self):
         prices = self.get_ships_prices()
         if prices:
@@ -97,6 +122,16 @@ class RsiDataParser:
         if ship:
             self.shorten_manufacturer_name(ship)
             return ship
+
+    def get_ship_data_from_name(self, ship_name):
+        ship_data = self.get_ship(ship_name)
+        if ship_data is None:
+            found_ships = self.get_ships_by_query(ship_name)
+            if len(found_ships) == 1:
+                ship_data = found_ships[0]
+            else:
+                ship_data = found_ships
+        return ship_data
 
     def get_ships_by_query(self, query):
         query = query.lower()
@@ -173,4 +208,4 @@ class RsiDataParser:
 
 
 if __name__ == '__main__':
-    print(RoadMap().current_versions)
+    print(RsiDataParser()._loaners)

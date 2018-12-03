@@ -5,6 +5,7 @@ from ..base_mixin import BaseMixinClass
 
 
 class FleetMixin(BaseMixinClass, ABC):
+    rsi_data = None
 
     def get_ship_data_from_name(self, ship_name):
         raise NotImplementedError
@@ -13,11 +14,33 @@ class FleetMixin(BaseMixinClass, ABC):
         self.database_manager.update_member_ships([], author)
         return self.database_manager.get_ships_by_member_name(author.username)
 
+    def get_flight_ready(self, ships):
+        result = []
+        for ship in ships:
+            if self.rsi_data.is_flight_ready(ship['name']):
+                result.append(ship)
+            for loaner in self.rsi_data.get_loaners(ship['name']):
+                loaner_dict = {
+                    'name': loaner,
+                    'manufacturer': "- loaner -"
+                }
+                owner = ship.get('owner')
+                if owner:
+                    loaner_dict['owner'] = owner
+                    loaner_dict['lti'] = False
+                result.append(loaner_dict)
+        return result
+
     def get_fleet_tables(self, args):
         if args.all_ships:
             ships = self.database_manager.get_all_ships_dicts()
+        elif args.member:
+            ships = self.database_manager.get_ships_dicts_by_member_name(args.member)
         else:
             ships = self.database_manager.get_ships_summary()
+
+        if args.flight_ready:
+            ships = self.get_flight_ready(ships)
 
         if args.filter:
             filters = args.filter.split(",")
@@ -74,9 +97,12 @@ class FleetMixin(BaseMixinClass, ABC):
         for message in self.get_member_fleet(author.username):
             yield message
 
-    def get_member_fleet(self, member_name):
+    def get_member_fleet(self, member_name, flight_ready=False):
         ships = self.database_manager.get_ships_dicts_by_member_name(member_name)
+
         if ships:
+            if flight_ready:
+                ships = self.get_flight_ready(ships)
             for message in self.split_data_and_get_messages(ships, self.print_dict_table, table_format="rst"):
                 yield message
         else:

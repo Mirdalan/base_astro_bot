@@ -21,13 +21,12 @@ class FleetMixin(BaseMixinClass, ABC):
                 result.append(ship)
             for loaner in self.rsi_data.get_loaners(ship['name']):
                 loaner_dict = {
-                    'name': loaner,
-                    'manufacturer': "- loaner -"
+                    'name': loaner['name'],
+                    'manufacturer': loaner['manufacturer']
                 }
-                owner = ship.get('owner')
-                if owner:
-                    loaner_dict['owner'] = owner
-                    loaner_dict['lti'] = False
+                if ship.get('owner'):
+                    loaner_dict['owner'] = ship['owner']
+                    loaner_dict['lti'] = "loaner"
                 result.append(loaner_dict)
         return result
 

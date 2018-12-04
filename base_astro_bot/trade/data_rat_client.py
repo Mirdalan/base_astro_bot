@@ -97,9 +97,9 @@ class MiningClient(BaseClient):
         """
         return self.get_request('resource_prices')
 
-    def update_price(self, resource_id, price, location_id, transaction_type="buy"):
+    def update_price(self, resource_id, price, location_id):
         payload = {
-                    "price_type": transaction_type,
+                    "price_type": "sell",
                     "price_location": location_id,
                     "price_resource": resource_id,
                     "price_unit_price": price

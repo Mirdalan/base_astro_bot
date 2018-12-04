@@ -14,21 +14,51 @@ class FleetMixin(BaseMixinClass, ABC):
         self.database_manager.update_member_ships([], author)
         return self.database_manager.get_ships_by_member_name(author.username)
 
+    @staticmethod
+    def ship_in_list(name, ship_list):
+        for ship in ship_list:
+            if name == ship['name']:
+                return ship
+
     def get_flight_ready(self, ships):
-        result = []
+
+        def get_loaner_basic_dict():
+            new_loaner_dict = {
+                'name': loaner['name'],
+                'manufacturer': loaner['manufacturer'],
+                'lti': "loaner",
+            }
+            if ship.get('owner'):
+                new_loaner_dict['owner'] = ship['owner']
+            return new_loaner_dict
+
+        def get_new_loaner_dict():
+            return {
+                        'name': loaner['name'],
+                        'manufacturer': loaner['manufacturer'],
+                        'owners': ship['owners'],
+                        'count': ship['count'],
+                    }
+
+        def get_loaner_summary_dict(new_loaner_dict):
+            if new_loaner_dict is None:
+                new_loaner_dict = get_new_loaner_dict()
+            else:
+                new_loaner_dict['count'] += ship['count']
+                new_owners = [owner for owner in ship['owners'].split(", ") if owner not in new_loaner_dict['owners']]
+                new_loaner_dict['owners'] = ", ".join([new_loaner_dict['owners']] + new_owners)
+            return new_loaner_dict
+
+        result = [ship for ship in ships if self.rsi_data.is_flight_ready(ship['name'])]
         for ship in ships:
-            if self.rsi_data.is_flight_ready(ship['name']):
-                result.append(ship)
             for loaner in self.rsi_data.get_loaners(ship['name']):
-                loaner_dict = {
-                    'name': loaner,
-                    'manufacturer': "- loaner -"
-                }
-                owner = ship.get('owner')
-                if owner:
-                    loaner_dict['owner'] = owner
-                    loaner_dict['lti'] = False
-                result.append(loaner_dict)
+                if ship.get('lti') is None:
+                    loaner_dict = self.ship_in_list(loaner['name'], result)
+                    loaner_dict = get_loaner_summary_dict(loaner_dict)
+                else:
+                    loaner_dict = get_loaner_basic_dict()
+                if loaner_dict not in result:
+                    result.append(loaner_dict)
         return result
 
     def get_fleet_tables(self, args):
@@ -57,6 +87,9 @@ class FleetMixin(BaseMixinClass, ABC):
             ships = sorted(ships, key=itemgetter(column))
         if args.descending:
             ships.reverse()
+
+        headers = ["name", "manufacturer"]
+        headers += [key for key in ships[0].keys() if key not in headers]
 
         return self.split_data_and_get_messages(ships, self.print_dict_table)
 

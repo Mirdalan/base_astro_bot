@@ -37,12 +37,15 @@ class RsiDataParser:
 
     def _find_loaners(self, ship_query):
         for ship_name in self._loaners.keys():
-            if ship_query in ship_name.lower():
+            if ship_name.lower() in ship_query:
                 return self._loaners[ship_name]
         return []
 
     def get_loaners(self, ship_name):
-        return self._loaners.get(ship_name, self._find_loaners(ship_name.lower()))
+        return [
+            self.get_one_ship_data(loaner_name)
+            for loaner_name in self._loaners.get(ship_name, self._find_loaners(ship_name.lower()))
+        ]
 
     def is_flight_ready(self, ship_name):
         ship = self.get_ship_data_from_name(ship_name)
@@ -123,6 +126,11 @@ class RsiDataParser:
             else:
                 ship_data = found_ships
         return ship_data
+
+    def get_one_ship_data(self, ship_name):
+        ship = self.get_ship_data_from_name(ship_name)
+        if isinstance(ship, dict):
+            return ship
 
     def get_ships_by_query(self, query):
         query = query.lower()

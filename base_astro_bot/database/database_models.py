@@ -33,7 +33,9 @@ class Ship(Base):
         return "%s owned by %s" % (self.name, self.owner.discord_id)
 
     def get_basic_dict(self):
-        return {k: self.__dict__.get(k, None) for k in ('name', 'manufacturer', 'lti')}
+        basic_dict = {k: self.__dict__.get(k, None) for k in ('name', 'manufacturer', 'lti')}
+        basic_dict['lti'] = "LTI" if basic_dict['lti'] else ""
+        return basic_dict
 
     def get_full_dict(self):
         result = self.get_basic_dict()

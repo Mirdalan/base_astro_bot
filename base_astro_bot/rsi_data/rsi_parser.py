@@ -37,7 +37,7 @@ class RsiDataParser:
 
     def _find_loaners(self, ship_query):
         for ship_name in self._loaners.keys():
-            if ship_query in ship_name.lower():
+            if ship_name.lower() in ship_query:
                 return self._loaners[ship_name]
         return []
 

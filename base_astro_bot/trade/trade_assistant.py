@@ -85,7 +85,7 @@ class TradeAssistant(PricesStructure):
 
             return [(route['commodity_name'], route['table']) for route in all_routes[:max_commodities]]
 
-    def report_trade_price(self, commodity_name, price, location_name, transaction_type):
+    def send_trade_price_report(self, commodity_name, price, transaction_type, location_name):
         commodity_id = self.commodities.match_exact_name(commodity_name).id
         location_id = self.locations.match_exact_name(location_name).id
         if commodity_id and location_id:
@@ -109,8 +109,8 @@ class TradeAssistant(PricesStructure):
                 for resource in self.resources.values() if resource.best_sell
             ]
 
-    def report_mining_price(self, resource_name, cargo_percent, value,
-                            location_name="port olisar", full_cargo=32):
+    def send_mining_price_report(self, resource_name, cargo_percent, value,
+                                 location_name="port olisar", full_cargo=32):
         resource_id = self.resources.match_exact_name(resource_name).id
         location_id = self.locations.match_exact_name(location_name).id
         if resource_id and location_id:

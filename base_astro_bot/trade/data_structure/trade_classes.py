@@ -38,7 +38,7 @@ class Commodity(Item):
             return all(avoid_location.lower() not in price.location.full_string.lower() for avoid_location in avoid)
 
         def location_matches_conditions(price, query):
-            return location_matches_query(price, query) and not_avoiding_location(price)
+            return price.location and location_matches_query(price, query) and not_avoiding_location(price)
 
         for buy, sell in self.iterate_all_routes():   # type: CommodityPrice, CommodityPrice
             if location_matches_conditions(buy, start_location) and location_matches_conditions(sell, end_location):

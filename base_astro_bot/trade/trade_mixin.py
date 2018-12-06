@@ -40,13 +40,16 @@ class TradeMixin(BaseMixinClass, ABC):
             yield self.format_table(commodity_name, routes_table)
 
     def report_trade_price(self, args):
-        if args.commodity_name and args.price and args.transaction_type and args.location_name:
+        if args.commodity and args.price and args.transaction and args.location:
             try:
-                if self.trade.send_trade_price_report(args.commodity_name,
-                                                      float(args.price),
-                                                      args.transaction_type,
-                                                      args.location_name):
+                result = self.trade.send_trade_price_report(args.commodity,
+                                                            float(args.price),
+                                                            args.transaction,
+                                                            args.location)
+                if result['state'] == 'ok':
                     return self.messages.success
+                else:
+                    return "\n".join([self.messages.something_went_wrong, result['wrong']])
             except ValueError:
                 self.logger.warning("Wrong arguments given '%s'" % str(args))
         return self.messages.something_went_wrong
@@ -55,18 +58,21 @@ class TradeMixin(BaseMixinClass, ABC):
         return self.print_dict_table(self.trade.get_mining_prices(resource))
 
     def report_mining_price(self, args):
-        if args.resource_name and args.percent and args.value and args.location_name:
+        if args.resource and args.percent and args.value and args.location:
             if args.cargo:
                 cargo = args.cargo
             else:
                 cargo = 32
             try:
-                if self.trade.send_mining_price_report(args.resource_name,
-                                                       float(args.percent.replace("%", "")),
-                                                       float(args.value),
-                                                       args.location_name,
-                                                       cargo):
+                result = self.trade.send_mining_price_report(args.resource,
+                                                             float(args.percent.replace("%", "")),
+                                                             float(args.value),
+                                                             args.location,
+                                                             cargo)
+                if result['state'] == 'ok':
                     return self.messages.success
+                else:
+                    return "\n".join([self.messages.something_went_wrong, result['wrong']])
             except ValueError:
                 self.logger.warning("Wrong arguments given '%s'" % str(args))
         return self.messages.something_went_wrong

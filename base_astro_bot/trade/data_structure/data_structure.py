@@ -31,14 +31,21 @@ class DataStructure(dict):
             if query.lower() == item.name.lower():
                 return item
 
+    def match_one(self, query):
+        match = self.match_exact_name(query)
+        if match:
+            return match
+        match = self.match_names(query)
+        return match[0] if len(match) == 1 else None
+
     def match_names(self, query):
-        return [item.id for item in self.values() if query.lower() in item.name.lower()]
+        return [item for item in self.values() if query.lower() in item.name.lower()]
 
     def exclude_names(self, query):
-        return [item.id for item in self.values() if query.lower() not in item.name.lower()]
+        return [item for item in self.values() if query.lower() not in item.name.lower()]
 
     def match_and_exclude_names(self, match_query, exclude_query):
-        return [item.id for item in self.values()
+        return [item for item in self.values()
                 if match_query.lower() in item.name.lower() and exclude_query.lower() not in item.name.lower()]
 
     def auto_match_names(self, match_query, exclude_query):

@@ -38,6 +38,7 @@ class BaseBot(RsiMixin, TradeMixin, FleetMixin):
         self.monitoring_thread.start()
 
         self.trade = TradeAssistant(log_file=settings.LOG_FILE, mongo_client=self.mongo)
+        self.trade_update_pending = False
 
         self.help_messages = self._get_help_message()
 
@@ -121,6 +122,7 @@ class BaseBot(RsiMixin, TradeMixin, FleetMixin):
                 self.monitor_forum_threads()
                 self.monitor_youtube_channel()
                 self.report_ship_price()
+                self.trade.update_data()
             except RequestException:
                 self.logger.warning("Network connection error. Sleeping a bit longer.")
                 time.sleep(1200)

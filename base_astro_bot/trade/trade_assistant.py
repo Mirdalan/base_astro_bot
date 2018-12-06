@@ -86,13 +86,22 @@ class TradeAssistant(PricesStructure):
             return [(route['commodity_name'], route['table']) for route in all_routes[:max_commodities]]
 
     def send_trade_price_report(self, commodity_name, price, transaction_type, location_name):
-        commodity_id = self.commodities.match_exact_name(commodity_name).id
-        location_id = self.locations.match_exact_name(location_name).id
-        if commodity_id and location_id:
-            response = self.trade_data_client.update_price(commodity_id, price, location_id, transaction_type)
+        commodity = self.commodities.match_one(commodity_name)
+        location = self.locations.match_one(location_name)
+        if commodity and location:
+            response = self.trade_data_client.update_price(commodity.id, price, location.id, transaction_type)
             if response.status_code == 204:
-                self.update_data()
-                return True
+                return {'state': 'ok'}
+
+        wrong = []
+        if location is None:
+            wrong.append(location_name)
+        if commodity is None:
+            wrong.append(commodity_name)
+        return {
+            'state': 'error',
+            'wrong': ",".join(wrong)
+        }
 
     def get_mining_prices(self, resource_name=None):
         if resource_name:
@@ -111,14 +120,23 @@ class TradeAssistant(PricesStructure):
 
     def send_mining_price_report(self, resource_name, cargo_percent, value,
                                  location_name="port olisar", full_cargo=32):
-        resource_id = self.resources.match_exact_name(resource_name).id
-        location_id = self.locations.match_exact_name(location_name).id
-        if resource_id and location_id:
+        resource = self.resources.match_one(resource_name)
+        location = self.locations.match_one(location_name)
+        if resource and location:
             unit_price = value / (cargo_percent * full_cargo)
-            response = self.mining_data_client.update_price(resource_id, unit_price, location_id)
+            response = self.mining_data_client.update_price(resource.id, unit_price, location.id)
             if response.status_code == 204:
-                self.update_data()
-                return True
+                return {'state': 'ok'}
+
+        wrong = []
+        if location is None:
+            wrong.append(location_name)
+        if resource is None:
+            wrong.append(resource_name)
+        return {
+            'state': 'error',
+            'wrong': ",".join(wrong)
+        }
 
 
 if __name__ == '__main__':

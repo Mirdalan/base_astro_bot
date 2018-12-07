@@ -69,35 +69,36 @@ class FleetMixin(BaseMixinClass, ABC):
         else:
             ships = self.database_manager.get_ships_summary()
 
-        if args.flight_ready:
-            ships = self.get_flight_ready(ships)
+        if ships:
+            if args.flight_ready:
+                ships = self.get_flight_ready(ships)
 
-        if args.filter:
-            filters = args.filter.split(",")
-            for item in filters:
-                key, expected_value = item.split("=")
-                ships = [ship for ship in ships if expected_value.lower() in str(ship[key]).lower()]
+            if args.filter:
+                filters = args.filter.split(",")
+                for item in filters:
+                    key, expected_value = item.split("=")
+                    ships = [ship for ship in ships if expected_value.lower() in str(ship[key]).lower()]
 
-        if args.order_by:
-            columns = args.order_by.split(",")
-            columns.reverse()
-        else:
-            columns = ["name", "manufacturer"]
-        for column in columns:
-            ships = sorted(ships, key=itemgetter(column))
-        if args.descending:
-            ships.reverse()
+            if args.order_by:
+                columns = args.order_by.split(",")
+                columns.reverse()
+            else:
+                columns = ["name", "manufacturer"]
+            for column in columns:
+                ships = sorted(ships, key=itemgetter(column))
+            if args.descending:
+                ships.reverse()
 
-        headers = ["name", "manufacturer"]
-        headers += [key for key in ships[0].keys() if key not in headers]
+            headers = ["name", "manufacturer"]
+            headers += [key for key in ships[0].keys() if key not in headers]
 
-        return self.split_data_and_get_messages(ships, self.print_dict_table)
+            return self.split_data_and_get_messages(ships, self.print_dict_table)
 
     def get_ship_for_member(self, ship):
         ship_name = ship.replace("lti", "").strip()
         ship_data = self.get_ship_data_from_name(ship_name)
         if ship_data and isinstance(ship_data, dict):
-            ship_data['lti'] = ship[-3:].lower() == "lti"
+            ship_data['lti'] = "LTI" if ship[-3:].lower() == "lti" else ""
             return ship_data
 
     def add_member_ship(self, ship_query, author):

@@ -41,10 +41,13 @@ class DatabaseManager:
 
     @staticmethod
     def create_ship(ship_data, owner):
+        lti = ship_data.get('lti', False)
+        if isinstance(lti, str):
+            lti = lti == "LTI"
         return database_models.Ship(
             manufacturer=ship_data['manufacturer'],
             name=ship_data['name'],
-            lti=ship_data.get('lti', False),
+            lti=lti,
             package_id=ship_data.get('package_id'),
             owner_id=owner.id,
             owner=owner,

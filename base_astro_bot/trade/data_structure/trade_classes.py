@@ -44,7 +44,7 @@ class Commodity(Item):
             if location_matches_conditions(buy, start_location) and location_matches_conditions(sell, end_location):
                 yield buy, sell
 
-    def get_routes(self, cargo=576, money=50000, start_location=None, end_location=None, avoid=(), max_routes=4):
+    def get_routes(self, cargo=576, money=50000, start_location=None, end_location=None, avoid=(), max_routes=3):
 
         def duplicate_value_route():
             for item in routes_data:

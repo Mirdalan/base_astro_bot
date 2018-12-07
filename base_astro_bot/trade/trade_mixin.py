@@ -8,15 +8,19 @@ from ..base_mixin import BaseMixinClass
 class TradeMixin(BaseMixinClass, ABC):
     trade = None
 
-    def format_table(self, commodity_name, routes_table):
+    def format_table(self, commodity_name, routes_table, add_header=True):
         table_string = tabulate(routes_table, tablefmt='presto')
-        line_length = max(len(line) for line in table_string.splitlines())
-        header_position = int(line_length * 0.3)
-        header_string = " commodity      |%s%s\n%s\n" % (" " * header_position, commodity_name, "-" * line_length)
-        table_string = "```%s%s```" % (header_string, table_string)
+        if add_header:
+            line_length = max(len(line) for line in table_string.splitlines())
+            header_position = int(line_length * 0.3)
+            header_string = " commodity      |%s%s\n%s\n" % (" " * header_position, commodity_name, "-" * line_length)
+            table_string = header_string + table_string
+        table_string = "```%s```" % table_string
         if len(table_string) < 2000:
-            return table_string
-        return self.format_table(commodity_name, routes_table[:-1])
+            return [table_string]
+        split_table = self.format_table(commodity_name, routes_table[:-2])
+        split_table += self.format_table(commodity_name, routes_table[-2:], add_header=False)
+        return split_table
 
     def get_trade_messages(self, args):
         budget = 50000
@@ -37,7 +41,8 @@ class TradeMixin(BaseMixinClass, ABC):
 
         arguments = (cargo, budget, args.start_location, args.end_location, avoid, allow_illegal)
         for commodity_name, routes_table in self.trade.get_trade_routes(*arguments):
-            yield self.format_table(commodity_name, routes_table)
+            for formatted_table in self.format_table(commodity_name, routes_table):
+                yield formatted_table
 
     def report_trade_price(self, args):
         if args.commodity and args.price and args.transaction and args.location:

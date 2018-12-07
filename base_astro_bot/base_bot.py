@@ -34,10 +34,10 @@ class BaseBot(RsiMixin, TradeMixin, FleetMixin):
         self.rsi_data = RsiDataParser(7600, log_file=settings.LOG_FILE, database_manager=self.database_manager)
         self.report_ship_price_list = settings.REPORT_SHIP_PRICE_LIST
 
+        self.trade = TradeAssistant(log_file=settings.LOG_FILE, mongo_client=self.mongo)
+
         self.monitoring_thread = threading.Thread(target=self.monitoring_procedure)
         self.monitoring_thread.start()
-
-        self.trade = TradeAssistant(log_file=settings.LOG_FILE, mongo_client=self.mongo)
 
         self.help_messages = self._get_help_message()
 

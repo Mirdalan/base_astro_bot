@@ -149,7 +149,11 @@ LOANER_SHIPS = {
     "Reliant Kore"
   ],
   "Retaliator": [
-    "Gladiator"
+    "Gladiator",
+    "Retaliator Bomber"
+  ],
+  "San'Tok.yai": [
+    "Khartu-al"
   ],
   "Terrapin": [
     "F7C-M Super Hornet"

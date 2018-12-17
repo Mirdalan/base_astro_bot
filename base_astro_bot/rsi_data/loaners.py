@@ -8,8 +8,8 @@ LOANER_SHIPS = {
   "135c": [
     "300i"
   ],
-  "600i": [
-    "600i Explorer"
+  "600i Touring": [
+    "600i Touring"
   ],
   "600i Explorer": [
     "Cyclone"
@@ -54,19 +54,19 @@ LOANER_SHIPS = {
     "Starfarer"
   ],
   "Freelancer DUR": [
-    "Freelancer"
+    "Freelancer DUR"
   ],
   "Freelancer MAX": [
-    "Freelancer"
+    "Freelancer MAX"
   ],
   "Freelancer MIS": [
-    "Freelancer"
+    "Freelancer MIS"
   ],
   "Genesis Starliner": [
     "Constellation Andromeda"
   ],
   "Hawk": [
-    "Cutlass Black"
+    "Hawk"
   ],
   "Hercules": [
     "Starfarer Gemini"
@@ -152,7 +152,7 @@ LOANER_SHIPS = {
     "Gladiator",
     "Retaliator Bomber"
   ],
-  "San'Tok.yai": [
+  "San'tok.yāi": [
     "Khartu-al"
   ],
   "Terrapin": [

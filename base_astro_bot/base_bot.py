@@ -1,5 +1,6 @@
 import threading
 import time
+from http.client import HTTPException
 
 from tabulate import tabulate
 from pymongo import MongoClient
@@ -110,9 +111,12 @@ class BaseBot(RsiMixin, TradeMixin, FleetMixin):
                 self.channel_main.send_message(thread)
 
     def monitor_youtube_channel(self):
-        latest_video_url = pafy.get_channel("RobertsSpaceInd").uploads[0].watchv_url
-        if self.database_manager.rsi_video_is_new(latest_video_url):
-            self.channel_main.send_message(latest_video_url)
+        try:
+            latest_video_url = pafy.get_channel("RobertsSpaceInd").uploads[0].watchv_url
+            if self.database_manager.rsi_video_is_new(latest_video_url):
+                self.channel_main.send_message(latest_video_url)
+        except HTTPException as you_tube_error:
+            self.logger.warning("Unsuccessful YouTube channel connection. '%s'", str(you_tube_error))
 
     def monitoring_procedure(self):
         while True:

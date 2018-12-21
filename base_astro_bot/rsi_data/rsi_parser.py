@@ -7,7 +7,7 @@ import requests
 import settings
 from ..utils import MyLogger
 from ..database import DatabaseManager
-from .road_map import RoadMap
+from .road_map import RoadMap, SqRoadMap
 from .loaners import LOANER_SHIPS
 
 
@@ -33,6 +33,7 @@ class RsiDataParser:
             self.auto_update_thread.start()
 
         self.road_map = RoadMap(log_file=log_file, database_manager=database_manager)
+        self.sq_road_map = SqRoadMap(log_file=log_file, database_manager=database_manager)
         self._loaners = LOANER_SHIPS
 
     def _find_loaners(self, ship_query):
@@ -207,4 +208,4 @@ class RsiDataParser:
 
 
 if __name__ == '__main__':
-    print(RsiDataParser()._loaners)
+    print(RsiDataParser().get_loaners("Javelin"))

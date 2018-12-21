@@ -49,10 +49,14 @@ class RoadMap:
         except requests.exceptions.ConnectionError as err:
             self.logger.warning("Could not download Road-map from RSI website due to following error:\n%s" % str(err))
 
+    @staticmethod
+    def _get_releases_structure(data):
+        return data.get('releases')
+
     def update_database(self):
         response = self.get_road_map_response()
         if response:
-            self.releases = response['data'].get('releases')
+            self.releases = self._get_releases_structure(response['data'])
             self.categories = self._get_categories_structure(response['data'].get('categories'))
             self.current_versions = self._get_current_versions(response['data'].get('description'))
             self.database.save_road_map(self.releases, self.categories, self.current_versions)
@@ -154,3 +158,21 @@ class RoadMap:
                 ["VERSIONS"] + [release.get('name') for release in self.releases],
                 ["CATEGORIES"] + list(self.categories.keys())
         ]
+
+
+class SqRoadMap(RoadMap):
+    road_map_url = settings.SQ_ROAD_MAP_URL
+
+    @staticmethod
+    def _get_releases_structure(data):
+        releases = data.get('releases')
+        for release in releases:
+            release.update(name=release['url_slug'].replace("SQ42-", ""))
+        return releases
+
+    @staticmethod
+    def _get_current_versions(version_message):
+                return {
+                            'live': version_message,
+                            'ptu': version_message
+                       }

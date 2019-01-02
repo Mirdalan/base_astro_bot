@@ -16,7 +16,10 @@ import settings
 
 
 class BaseBot(RsiMixin, TradeMixin, FleetMixin):
+    guild_id = settings.GUILD_ID
     main_channel_id = settings.CHANNELS['main']
+    member_roles_names = settings.MEMBER_ROLES
+    privileged_roles_names = settings.PRIVILEGED_ROLES
     messages = settings.messages
     max_characters = settings.MESSAGE_MAX_CHARACTERS
     max_ships = settings.MESSAGE_MAX_SHIPS
@@ -28,6 +31,8 @@ class BaseBot(RsiMixin, TradeMixin, FleetMixin):
 
         self.channel_main = self._get_channel_instance(self.main_channel_id)
         self.bot_user = self._get_bot_user()
+        self.member_roles = self._get_member_roles()
+        self.privileged_roles = self._get_privileged_roles()
 
         self.database_manager = DatabaseManager(log_file=settings.LOG_FILE)
         self.mongo = MongoClient(self.mongo_uri)
@@ -49,6 +54,12 @@ class BaseBot(RsiMixin, TradeMixin, FleetMixin):
         raise NotImplementedError
 
     def _get_bot_user(self):
+        raise NotImplementedError
+
+    def _get_member_roles(self):
+        raise NotImplementedError
+
+    def _get_privileged_roles(self):
         raise NotImplementedError
 
     @staticmethod

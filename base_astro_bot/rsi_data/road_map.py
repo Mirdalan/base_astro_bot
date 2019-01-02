@@ -167,7 +167,8 @@ class SqRoadMap(RoadMap):
     def _get_releases_structure(data):
         releases = data.get('releases')
         for release in releases:
-            release.update(name=release['url_slug'].replace("SQ42-", ""))
+            name_list = release['name'].split()
+            release.update(name="".join([name_list[-1], name_list[-2]]))
         return releases
 
     @staticmethod

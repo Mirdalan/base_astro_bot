@@ -18,17 +18,22 @@ class DatabaseManager:
         session = sessionmaker(bind=database_engine)
         self.sql_alchemy_session = session()
 
-    def add_and_get_member(self, user):
+    def delete_member(self, member):
+        self.sql_alchemy_session.delete(member)
+        self.sql_alchemy_session.commit()
+        self.logger.debug("Member deleted.")
+
+    def delete_discord_user(self, user):
         query = self.sql_alchemy_session.query(database_models.Member)
         query = query.filter(database_models.Member.discord_id == user.id)
         try:
             self.logger.debug("Member %s already exists. Deleting..." % user.username)
-            member = query.one()
-            self.sql_alchemy_session.delete(member)
-            self.sql_alchemy_session.commit()
-            self.logger.debug("Deleted.")
+            self.delete_member(query.one())
         except exc.NoResultFound:
             self.logger.debug("Member %s does not exist." % user.username)
+
+    def add_and_get_member(self, user):
+        self.delete_discord_user(user)
         self.logger.debug("Creating member %s" % user.username)
         member = database_models.Member(discord_id=user.id, name=user.username)
         self.sql_alchemy_session.add(member)

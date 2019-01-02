@@ -14,6 +14,12 @@ class FleetMixin(BaseMixinClass, ABC):
         self.database_manager.update_member_ships([], author)
         return self.database_manager.get_ships_by_member_name(author.username)
 
+    def delete_member(self, member_name):
+        member = self.database_manager.get_member_by_name(member_name)
+        if member:
+            self.database_manager.delete_member(member)
+            return True
+
     @staticmethod
     def ship_in_list(name, ship_list):
         for ship in ship_list:

@@ -52,7 +52,7 @@ class RoadMapMixin(BaseMixinClass, ABC):
             result = self._get_road_map_data_message(result, find=args.find)
         elif args.list:
             result = road_map.get_releases_and_categories()
-            result = [self.print_dict_table(result, table_format="fancy_grid")]
+            result = [tabulate(result, tablefmt="fancy_grid")]
         elif args.find:
             result = road_map.get()
             result = self._get_road_map_data_message(result, find=args.find)

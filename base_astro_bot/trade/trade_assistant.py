@@ -75,15 +75,18 @@ class TradeAssistant(PricesStructure):
     def get_trade_prices(self, location_name):
         location = self.locations.match_one(location_name)
         if location:
-            return [
+            prices = [
                 {
-                    "commodity": self.commodities[price.commodity_id],
+                    "commodity": self.commodities[price.commodity_id].name,
                     "transaction": price.type,
                     "price": price.value
                 }
                 for price in self.commodity_prices
                 if price.location_id == location.id
             ]
+            prices.sort(key=lambda item: item['commodity'])
+            prices.sort(key=lambda item: item['transaction'])
+            return prices
 
     def get_trade_routes(self, cargo=576, money=50000, start_location=None, end_location=None, avoid=(),
                          allow_illegal=True, max_commodities=3):

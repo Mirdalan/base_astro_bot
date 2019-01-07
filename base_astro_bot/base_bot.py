@@ -76,13 +76,15 @@ class BaseBot(RsiMixin, TradeMixin, FleetMixin):
         else:
             return ""
 
-    @staticmethod
-    def print_dict_table(items, table_format="presto", **kwargs):
-        return "```%s```" % tabulate(items, headers='keys', tablefmt=table_format, **kwargs)
+    def print_dict_table(self, items, table_format="presto", **kwargs):
+        if items:
+            return "```%s```" % tabulate(items, headers='keys', tablefmt=table_format, **kwargs)
+        return self.messages.something_went_wrong
 
-    @staticmethod
-    def print_list_table(items, table_format="presto", **kwargs):
-        return "```%s```" % tabulate(items, tablefmt=table_format, **kwargs)
+    def print_list_table(self, items, table_format="presto", **kwargs):
+        if items:
+            return "```%s```" % tabulate(items, tablefmt=table_format, **kwargs)
+        return self.messages.something_went_wrong
 
     def split_data_and_get_messages(self, items, get_message_function, *args, **kwargs):
         message = get_message_function(items, *args, **kwargs)

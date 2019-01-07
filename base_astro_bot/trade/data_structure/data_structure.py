@@ -55,3 +55,6 @@ class DataStructure(dict):
             return self.match_names(match_query)
         elif exclude_query:
             return self.exclude_names(exclude_query)
+
+    def __iter__(self):
+        return iter(self.values())

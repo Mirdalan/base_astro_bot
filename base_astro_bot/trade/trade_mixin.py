@@ -46,8 +46,11 @@ class TradeMixin(BaseMixinClass, ABC):
             for formatted_table in self.format_table(commodity_name, routes_table):
                 yield formatted_table
 
-    def get_trade_prices(self, location_name):
-        return self.print_dict_table(self.trade.get_trade_prices(location_name))
+    def get_trade_prices_msgs(self, location_name):
+        return self.split_data_and_get_messages(
+            self.trade.get_trade_prices(location_name),
+            self.print_dict_table
+        )
 
     def report_trade_price(self, args):
         if args.commodity and args.price and args.transaction and args.location:

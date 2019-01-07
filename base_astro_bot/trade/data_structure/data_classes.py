@@ -60,9 +60,12 @@ class Price(DataItem):
         return self.get('price_%s' % self.name_suffix)
 
     @property
+    def location_id(self):
+        return self.get('price_location')
+
+    @property
     def location(self):
-        location_id = self.get('price_location')
-        return self._locations.get(location_id)
+        return self._locations.get(self.location_id)
 
     @property
     def type(self):

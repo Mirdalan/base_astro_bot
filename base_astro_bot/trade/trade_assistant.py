@@ -99,7 +99,7 @@ class TradeAssistant(PricesStructure):
         if all_routes:
             all_routes.sort(key=lambda item: item.get('best_income'), reverse=True)
 
-            return [(route['commodity_name'], route['table']) for route in all_routes[:max_commodities]]
+        return [(route['commodity_name'], route['table']) for route in all_routes[:max_commodities]]
 
     def send_trade_price_report(self, commodity_name, price, transaction_type, location_name):
         commodity = self.commodities.match_one(commodity_name)

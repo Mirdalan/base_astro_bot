@@ -24,7 +24,7 @@ class TradeMixin(BaseMixinClass, ABC):
             "```%s```" % table_string[split_index:]
         ]
 
-    def get_trade_messages(self, args):
+    def iterate_trade_messages(self, args):
         budget = 50000
         cargo = 576
         avoid = []
@@ -45,6 +45,10 @@ class TradeMixin(BaseMixinClass, ABC):
         for commodity_name, routes_table in self.trade.get_trade_routes(*arguments):
             for formatted_table in self.format_table(commodity_name, routes_table):
                 yield formatted_table
+
+    def get_trade_messages(self, args):
+        messages_list = list(self.iterate_trade_messages(args))
+        return messages_list if messages_list else [self.messages.found_nothing]
 
     def get_trade_prices_msgs(self, location_name):
         return self.split_data_and_get_messages(

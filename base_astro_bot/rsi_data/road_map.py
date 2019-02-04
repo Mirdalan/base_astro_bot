@@ -107,7 +107,7 @@ class RoadMap:
     def get_release_details(self, name):
         release = None
         for item in self.releases:
-            if item.get('name') == name:
+            if item.get('name', "") == name:
                 release = item
                 break
         if release is not None:
@@ -125,9 +125,12 @@ class RoadMap:
         category = self.categories.get(slug)
         if category is not None:
             for release in self.releases:
-                for card in release.get('cards'):
+                for card in release.get('cards', []):
                     if int(category['id']) == int(card['category_id']):
-                        release_header = release.get('name') + " " + release.get('description')
+                        release_header = "%s %s" % (
+                                release.get('name', ""),
+                                release.get('description', "")
+                        )
                         value = [self.split_long_string_to_lines(card['name']),
                                  self.split_long_string_to_lines(card['description'], 40),
                                  self._get_task_status(card)]
@@ -145,9 +148,12 @@ class RoadMap:
     def get(self):
         result = {}
         for release in self.releases:
-            for card in release.get('cards'):
+            for card in release.get('cards', []):
                 category_name = self._get_category_name(card['category_id'])
-                release_header = release.get('name') + " " + release.get('description')
+                release_header = "%s %s" % (
+                                release.get('name', ""),
+                                release.get('description', "")
+                )
                 value = [self.split_long_string_to_lines(card['name']),
                          self.split_long_string_to_lines(card['description'], 40)]
                 result.setdefault(" | ".join((release_header, category_name)), [value]).append(value)
@@ -155,7 +161,7 @@ class RoadMap:
 
     def get_releases_and_categories(self):
         return [
-                ["VERSIONS"] + [release.get('name') for release in self.releases],
+                ["VERSIONS"] + [release.get('name', "") for release in self.releases],
                 ["CATEGORIES"] + list(self.categories.keys())
         ]
 
@@ -165,7 +171,7 @@ class SqRoadMap(RoadMap):
 
     @staticmethod
     def _get_releases_structure(data):
-        releases = data.get('releases')
+        releases = data.get('releases', [])
         for release in releases:
             name_list = release['name'].split()
             release.update(name="".join([name_list[-1], name_list[-2]]))
